@@ -32,4 +32,23 @@ for character in backwardsWord {
 let animal = "octopus"
 animal.replacingOccurrences(of: "o", with:"🐙" )
 
+
+
+var eString = "Meet me in St. Louis"
+
+for character in eString {
+    if character == "e" {
+        print("found an e!")
+    } else {
+    }
+}
+
+var forwardString = "stressed"
+var backwardsString = forwardString.reversed()
+print(String(backwardsString))
+
+var lottaLikes = "If like, you wanna learn Swift like, you should build lots of small apps, cuz it's like, a good way to practice."
+
+print(lottaLikes.replacingOccurrences(of: " like,", with: ""))
+
 //: [Next](@next)
