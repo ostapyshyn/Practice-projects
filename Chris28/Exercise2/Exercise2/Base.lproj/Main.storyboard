@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Exercise2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Breakfast" translatesAutoresizingMaskIntoConstraints="NO" id="D9o-5c-4eW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopGradient" translatesAutoresizingMaskIntoConstraints="NO" id="QcI-a5-yar">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BottomGradient" translatesAutoresizingMaskIntoConstraints="NO" id="To0-pE-tle">
+                                <rect key="frame" x="0.0" y="406" width="375" height="406"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Energize with healty and hearty breakfast" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H01-Df-Tqv">
+                                <rect key="frame" x="20" y="751.33333333333337" width="335" height="40.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hardcore Avo Toast" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veW-Dp-glp">
+                                <rect key="frame" x="20" y="29.999999999999993" width="141" height="81.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart_health" translatesAutoresizingMaskIntoConstraints="NO" id="OSc-Yy-RiN">
+                                <rect key="frame" x="308" y="64" width="47" height="41"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="To0-pE-tle" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="1py-tt-J6J"/>
+                            <constraint firstItem="To0-pE-tle" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="0.01" id="75S-HE-tLH"/>
+                            <constraint firstAttribute="trailing" secondItem="H01-Df-Tqv" secondAttribute="trailing" constant="20" id="ASy-tB-8B1"/>
+                            <constraint firstItem="H01-Df-Tqv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="EaQ-KW-bIO"/>
+                            <constraint firstItem="QcI-a5-yar" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="Fwm-2T-6gT"/>
+                            <constraint firstItem="OSc-Yy-RiN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="H2n-rg-PFV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OSc-Yy-RiN" secondAttribute="trailing" constant="20" id="HRS-9r-8vU"/>
+                            <constraint firstAttribute="bottom" secondItem="To0-pE-tle" secondAttribute="bottom" constant="0.01" id="HmA-sX-dew"/>
+                            <constraint firstItem="QcI-a5-yar" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="0.01" id="Hnk-dC-7TI"/>
+                            <constraint firstItem="QcI-a5-yar" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="0.01" id="RCe-Oe-i0K"/>
+                            <constraint firstAttribute="bottom" secondItem="H01-Df-Tqv" secondAttribute="bottom" constant="20" id="SUR-n2-AU4"/>
+                            <constraint firstAttribute="trailing" secondItem="D9o-5c-4eW" secondAttribute="trailing" constant="0.01" id="UDl-6f-GBz"/>
+                            <constraint firstItem="veW-Dp-glp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="d4j-Ia-Z18"/>
+                            <constraint firstItem="D9o-5c-4eW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="0.01" id="gCb-KY-73g"/>
+                            <constraint firstAttribute="trailing" secondItem="To0-pE-tle" secondAttribute="trailing" constant="0.01" id="k4g-FJ-if2"/>
+                            <constraint firstItem="veW-Dp-glp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="pWJ-hs-415"/>
+                            <constraint firstAttribute="trailing" secondItem="QcI-a5-yar" secondAttribute="trailing" constant="0.01" id="q8G-JD-aqe"/>
+                            <constraint firstItem="D9o-5c-4eW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="0.01" id="qoh-7H-hWW"/>
+                            <constraint firstAttribute="bottom" secondItem="D9o-5c-4eW" secondAttribute="bottom" constant="0.01" id="zOt-Nm-hQf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.40000000000001" y="137.4384236453202"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BottomGradient" width="414" height="298"/>
+        <image name="Breakfast" width="414" height="896"/>
+        <image name="Heart_health" width="47" height="41"/>
+        <image name="TopGradient" width="414" height="380"/>
+    </resources>
+</document>
