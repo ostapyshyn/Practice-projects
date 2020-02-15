@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var outputLabel: UILabel!
-
+    @IBOutlet var userInput: UITextField!
     
 
     override func viewDidLoad() {
@@ -19,6 +19,12 @@ class ViewController: UIViewController {
         outputLabel.text = "Hey, Frank!"
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func displayToLabel() {
+            outputLabel.text = userInput.text
+        }
+
+    
 
 
 }
