@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Burger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Burger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gv-Ir-Ne7">
+                                <rect key="frame" x="90" y="20" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Burrito" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsn-eJ-xYS">
+                                <rect key="frame" x="305" y="20" width="57.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Salmon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa0-xZ-47Y">
+                                <rect key="frame" x="518.5" y="20" width="61.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burrito" translatesAutoresizingMaskIntoConstraints="NO" id="HTG-1T-n19">
+                                <rect key="frame" x="235.5" y="61" width="196" height="294"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="salmon" translatesAutoresizingMaskIntoConstraints="NO" id="2A3-Gd-OhT">
+                                <rect key="frame" x="451.5" y="61" width="195.5" height="294"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger" translatesAutoresizingMaskIntoConstraints="NO" id="qGG-1c-Imn">
+                                <rect key="frame" x="20" y="61" width="195.5" height="294"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HTG-1T-n19" secondAttribute="bottom" constant="20" id="0aC-jL-iQy"/>
+                            <constraint firstItem="Hsn-eJ-xYS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="20J-oQ-aeB"/>
+                            <constraint firstItem="2A3-Gd-OhT" firstAttribute="leading" secondItem="HTG-1T-n19" secondAttribute="trailing" constant="20" id="3M7-aY-kLU"/>
+                            <constraint firstItem="qGG-1c-Imn" firstAttribute="top" secondItem="6Gv-Ir-Ne7" secondAttribute="bottom" constant="20" id="3r8-hm-ElL"/>
+                            <constraint firstItem="2A3-Gd-OhT" firstAttribute="top" secondItem="Sa0-xZ-47Y" secondAttribute="bottom" constant="20" id="4mV-Be-dmc"/>
+                            <constraint firstItem="Sa0-xZ-47Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9Iz-nC-iiA"/>
+                            <constraint firstItem="HTG-1T-n19" firstAttribute="top" secondItem="Hsn-eJ-xYS" secondAttribute="bottom" constant="20" id="AaJ-p0-ZG6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qGG-1c-Imn" secondAttribute="bottom" constant="20" id="CFB-sR-pNi"/>
+                            <constraint firstItem="qGG-1c-Imn" firstAttribute="top" secondItem="6Gv-Ir-Ne7" secondAttribute="bottom" constant="20" id="GuN-6g-RME"/>
+                            <constraint firstItem="HTG-1T-n19" firstAttribute="leading" secondItem="qGG-1c-Imn" secondAttribute="trailing" constant="20" id="IPS-xD-bgm"/>
+                            <constraint firstItem="HTG-1T-n19" firstAttribute="top" secondItem="Hsn-eJ-xYS" secondAttribute="bottom" constant="20" id="Kcd-3e-TCw"/>
+                            <constraint firstItem="2A3-Gd-OhT" firstAttribute="top" secondItem="Sa0-xZ-47Y" secondAttribute="bottom" constant="20" id="NpS-Xf-9t9"/>
+                            <constraint firstItem="Hsn-eJ-xYS" firstAttribute="centerX" secondItem="HTG-1T-n19" secondAttribute="centerX" id="U2w-XK-izU"/>
+                            <constraint firstItem="2A3-Gd-OhT" firstAttribute="leading" secondItem="HTG-1T-n19" secondAttribute="trailing" constant="20" id="ZFo-9N-oVt"/>
+                            <constraint firstItem="6Gv-Ir-Ne7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Zhf-dX-OuW"/>
+                            <constraint firstItem="2A3-Gd-OhT" firstAttribute="height" secondItem="qGG-1c-Imn" secondAttribute="height" id="eP6-gq-cWd"/>
+                            <constraint firstItem="HTG-1T-n19" firstAttribute="height" secondItem="qGG-1c-Imn" secondAttribute="height" id="ewq-wh-yjS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2A3-Gd-OhT" secondAttribute="trailing" constant="20" id="gvH-dg-4iI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2A3-Gd-OhT" secondAttribute="bottom" constant="20" id="h5W-Pr-Unj"/>
+                            <constraint firstItem="HTG-1T-n19" firstAttribute="width" secondItem="qGG-1c-Imn" secondAttribute="width" id="iun-Kw-3hG"/>
+                            <constraint firstItem="Sa0-xZ-47Y" firstAttribute="centerX" secondItem="2A3-Gd-OhT" secondAttribute="centerX" id="psI-gA-s6U"/>
+                            <constraint firstItem="2A3-Gd-OhT" firstAttribute="width" secondItem="qGG-1c-Imn" secondAttribute="width" id="vM3-a5-Ujc"/>
+                            <constraint firstItem="6Gv-Ir-Ne7" firstAttribute="centerX" secondItem="qGG-1c-Imn" secondAttribute="centerX" id="xSH-cw-Ofe"/>
+                            <constraint firstItem="qGG-1c-Imn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="z7d-VE-SZg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.78410794602701" y="138.40000000000001"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="burger" width="3269" height="2175"/>
+        <image name="burrito" width="1920" height="1080"/>
+        <image name="salmon" width="3200" height="2400"/>
+    </resources>
+</document>

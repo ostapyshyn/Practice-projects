@@ -12,8 +12,11 @@ class ViewController: UIViewController {
     
     @IBOutlet var outputLabel: UILabel!
     @IBOutlet var userInput: UITextField!
+    @IBOutlet var userInput2: UITextField!
     
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         outputLabel.text = "Hey, Frank!"
@@ -21,11 +24,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func displayToLabel() {
-            outputLabel.text = userInput.text
+        let name1 = userInput.text!
+        let name2 = userInput2.text!
+        let name3 = name1 + name2
+        
+        
+        outputLabel.text = name3
         }
 
     
+    @IBAction func addPressed(_ sender: UIButton) {
+        
+        let name1: Int = Int(userInput.text!)!
+        let name2: Int = Int(userInput2.text!)!
+        let name3 = name1 + name2
+        outputLabel.text = "\(name3)"
+        
+        
+    }
+    
 
-
+    @IBAction func SayHi(_ sender: UIButton) {
+        outputLabel.text = "Hi \(userInput.text!)"
+    }
+    
 }
+
 

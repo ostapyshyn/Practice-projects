@@ -5,25 +5,17 @@ var allowed = CharacterSet()
 allowed.insert(charactersIn: "!@#$%&")
 
 func shortNameFromName(name: String) -> String {
-    name.remove(at:       )
-    let lowercaseName = name.lowercased()
+    //let lowercaseName = name.lowercased()
     let vowelSet = CharacterSet(charactersIn: "aeiou")
     
     if name.prefix(1).rangeOfCharacter(from: vowelSet) != nil {
         print("yes")
-        
         return name
     } else {
-        
-        
         var name1 = name
         name1.remove(at: name1.startIndex)
         return name1
-        
     }
-    
-    
-    
 }
 
 shortNameFromName(name: "Talia")
