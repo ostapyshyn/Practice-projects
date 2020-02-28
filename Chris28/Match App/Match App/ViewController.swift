@@ -28,19 +28,32 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if !card.isFlipped {
             cell.flip()
             card.isFlipped = true
-        } else {
-            cell.flipBack()
             
-            card.isFlipped = false
-        }
+            if firstFlippedCard == nil {
+                
+                firstFlippedCard = indexPath
+            } else {
+                
+            }
+            
+            
+            
+            
+        } 
         
         
     }
+    func checkForMatches(_ secondFlippedCardIndex: IndexPath) {
+        let cardOneCell = collectionView.cellForItem(at: firstFlippedCard!) as! CardCollectionViewCell
     
+    
+    }
     
     
     var model = CardModel()
     var cardArray = [Card]()
+    
+    var firstFlippedCard: IndexPath?
     
     @IBOutlet var collectionView: UICollectionView!
     

@@ -23,11 +23,17 @@ class ViewController: UIViewController {
         
     }
     
-    func incrementCount() {
+    @IBAction func incrementCount() {
         self.count += 1
         self.label.text = "\(self.count)"
     }
     
-
+    
+    
+    @IBAction func incrementByOne(_ sender: UIButton) {
+        self.count += 1
+        self.label.text = "\(self.count)"
+    }
+    
 }
 
