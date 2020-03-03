@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var recordingLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,7 @@ class ViewController: UIViewController {
 
     @IBAction func recordAudio(_ sender: UIButton) {
         print("Hello there!")
+        recordingLabel.text = "Recording in Progress"
     }
     
 }
