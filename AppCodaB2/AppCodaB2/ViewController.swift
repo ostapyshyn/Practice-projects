@@ -16,10 +16,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showMessage(sender: UIButton) {
-        let alertController = UIAlertController(title: "Welcome to My First App", message: "Hello World", preferredStyle:UIAlertController.Style.alert)
+        let names = ["🤓": "Nerd", "👾": "Monstre", "🤖": "Robot", "👻": "Ghost"]
+        let selectedButton = sender
         
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        present(alertController, animated: true, completion: nil)
+        if let wordToLookup = selectedButton.titleLabel?.text {
+            let alertController = UIAlertController(title: "Meaning", message: names[wordToLookup] , preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+            
+            print(sender.titleLabel?.text ?? "error")
+            
+            
+            print("===")
+            print(sender.currentTitle!)
+            
+        }
+        
     }
     
     
