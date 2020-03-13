@@ -18,6 +18,14 @@ class ViewController: UIViewController {
     @IBAction func changeBackground(_ sender: UIButton) {
         view.backgroundColor = UIColor.darkGray
         
+        let all = view.subviews
+        
+        for currentView in all {
+            if currentView is UILabel {
+                let label = currentView as! UILabel
+                label.textColor = UIColor.blue
+            }
+        }
     }
     
 }
