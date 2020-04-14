@@ -9,9 +9,12 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    
+    var color: UIColor?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = color ?? .blue
 
         // Do any additional setup after loading the view.
     }
