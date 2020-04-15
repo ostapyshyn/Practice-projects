@@ -13,6 +13,7 @@
 		0B48E76A2445FCCB004DF2D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B48E7692445FCCB004DF2D3 /* Assets.xcassets */; };
 		0B48E76D2445FCCB004DF2D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B48E76B2445FCCB004DF2D3 /* LaunchScreen.storyboard */; };
 		0B48E7752445FD5A004DF2D3 /* CardSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B48E7742445FD5A004DF2D3 /* CardSelectionVC.swift */; };
+		0B8DE1142446E34D00B53DEA /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8DE1132446E34D00B53DEA /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0B48E76C2445FCCB004DF2D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B48E76E2445FCCB004DF2D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B48E7742445FD5A004DF2D3 /* CardSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionVC.swift; sourceTree = "<group>"; };
+		0B8DE1132446E34D00B53DEA /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		0B48E75F2445FCC7004DF2D3 /* CardWorkout */ = {
 			isa = PBXGroup;
 			children = (
+				0B8DE1132446E34D00B53DEA /* Deck.swift */,
 				0B48E7602445FCC7004DF2D3 /* AppDelegate.swift */,
 				0B48E7622445FCC7004DF2D3 /* SceneDelegate.swift */,
 				0B48E7662445FCC7004DF2D3 /* Main.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8DE1142446E34D00B53DEA /* Deck.swift in Sources */,
 				0B48E7612445FCC7004DF2D3 /* AppDelegate.swift in Sources */,
 				0B48E7632445FCC7004DF2D3 /* SceneDelegate.swift in Sources */,
 				0B48E7752445FD5A004DF2D3 /* CardSelectionVC.swift in Sources */,

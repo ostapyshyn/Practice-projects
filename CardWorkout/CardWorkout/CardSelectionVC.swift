@@ -10,11 +10,15 @@ import UIKit
 
 class CardSelectionVC: UIViewController {
     
+    var timer: Timer!
+    var cards: [UIImage] = Deck.allValues
+    
     @IBOutlet var cardImage: UIImageView!
    
     @IBOutlet var buttons: [UIButton]!
     
     override func viewDidLoad() {
+        startTimer()
         super.viewDidLoad()
         
         for button in buttons {
@@ -22,18 +26,32 @@ class CardSelectionVC: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(showRandomImage), userInfo: nil, repeats: true)
+    }
+    
+    @objc func showRandomImage() {
+        cardImage.image = cards.randomElement() ?? UIImage(named: "AS")
+        
+    }
+    
     
     @IBAction func stopButtonTapped(_ sender: UIButton) {
+        timer.invalidate()
         
     }
     
     @IBAction func restartButtonTapped(_ sender: UIButton) {
-        
+        timer.invalidate()
+        startTimer()
     }
     
-    @IBAction func rulesButtonTapped(_ sender: UIButton) {
-        
-    }
+    
     
     
 }

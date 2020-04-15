@@ -64,7 +64,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="rulesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3WJ-oR-zHY"/>
                                     <segue destination="qes-PN-T4i" kind="presentation" id="pE7-tu-Cug"/>
                                 </connections>
                             </button>
@@ -107,18 +106,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The value of each card represents the number of exercise you do. " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plK-ND-YHH">
-                                <rect key="frame" x="30" y="237.99999999999997" width="354" height="64.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The value of each card represents the number of exercise you do.  J = 11, Q = 12, K = 13, A = 14" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plK-ND-YHH">
+                                <rect key="frame" x="30" y="238" width="354" height="86"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♠️ = Push-up  ❤️ = Sit-up  ♣️ = Burpees  ♦️ = Jumping Jacks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-A8-kat">
+                                <rect key="frame" x="82" y="399" width="250" height="175.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="nzX-9s-X5d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="lIi-A8-kat" firstAttribute="top" secondItem="plK-ND-YHH" secondAttribute="bottom" constant="75" id="4OA-mI-oQG"/>
                             <constraint firstItem="plK-ND-YHH" firstAttribute="leading" secondItem="A6r-ZY-Uaj" secondAttribute="leading" constant="30" id="FF4-5j-k1c"/>
                             <constraint firstItem="A6r-ZY-Uaj" firstAttribute="trailing" secondItem="FeS-qY-4IK" secondAttribute="trailing" constant="30" id="Gh6-u2-ldH"/>
                             <constraint firstItem="FeS-qY-4IK" firstAttribute="top" secondItem="A6r-ZY-Uaj" secondAttribute="top" constant="140" id="NAi-5U-SBs"/>
+                            <constraint firstItem="lIi-A8-kat" firstAttribute="centerX" secondItem="QB9-Dw-hEY" secondAttribute="centerX" id="OlV-yN-liZ"/>
                             <constraint firstItem="plK-ND-YHH" firstAttribute="top" secondItem="FeS-qY-4IK" secondAttribute="bottom" constant="50" id="V80-ro-DPc"/>
                             <constraint firstItem="FeS-qY-4IK" firstAttribute="leading" secondItem="A6r-ZY-Uaj" secondAttribute="leading" constant="30" id="bW8-OW-5fj"/>
                             <constraint firstItem="A6r-ZY-Uaj" firstAttribute="trailing" secondItem="plK-ND-YHH" secondAttribute="trailing" constant="30" id="mAe-pg-6bz"/>
@@ -128,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaK-U0-XO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013" y="155"/>
+            <point key="canvasLocation" x="1011.5942028985507" y="154.6875"/>
         </scene>
     </scenes>
     <resources>
