@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController  {
     
+    
+    
+    
+    
+    
     let dailyTasks = ["Check all windows",
                       "Check all doors",
                       "Is the boiler fueled?",
@@ -31,6 +36,14 @@ class ViewController: UIViewController  {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func toggleDarkMode(_ sender: UISwitch) {
+        if sender.isOn {
+            view.backgroundColor = UIColor.darkGray
+        } else {
+            view.backgroundColor = UIColor.white
+        }
+    }
+    
     @IBAction func changeBackground(_ sender: UIButton) {
         view.backgroundColor = UIColor.darkGray
         
@@ -49,6 +62,7 @@ class ViewController: UIViewController  {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        tableView.backgroundColor = UIColor.clear
         return 3
     }
     
@@ -99,7 +113,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             cell.textLabel?.text = "Should not happen"
         }
-        
+        cell.backgroundColor = UIColor.clear
         return cell
         
     }
