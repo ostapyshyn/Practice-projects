@@ -10,31 +10,70 @@ import UIKit
 
 class ViewController: UIViewController  {
     
+    @IBOutlet var tableView: UITableView!
     
+    var dailyTasks = [
+        Task(name: "Check all windows", type: .daily, completed: false, lastCompleted: nil),
+        Task(name: "Check all doors", type: .daily, completed: false, lastCompleted: nil),
+        Task(name: "Is the boiler fueled?", type: .daily, completed: false, lastCompleted: nil),
+        Task(name: "Check the mailbox", type: .daily, completed: false, lastCompleted: nil),
+        Task(name: "Empty trash containers", type: .daily, completed: false, lastCompleted: nil),
+        Task(name: "If freezing, check water pipes", type: .daily, completed: false, lastCompleted: nil),
+        Task(name: "Document \" strange and unsual\" occurrences", type: .daily, completed: false, lastCompleted: nil)
+    ]
+        
+    var weeklyTasks = [
+        Task(name: "Check inside all cabins", type: .weekly, completed: false, lastCompleted: nil),
+        Task(name: "Flush all lavatories in cabins", type: .weekly, completed: false, lastCompleted: nil),
+        Task(name: "Walk the perimeter of property", type: .weekly, completed: false, lastCompleted: nil)
+    ]
     
-    
-    
-    
-    let dailyTasks = ["Check all windows",
-                      "Check all doors",
-                      "Is the boiler fueled?",
-                      "Check the mailbox",
-                      "Empty trash containers",
-                      "If freezing, check water pipes",
-                      "Document \" strange and unsual\" occurrences"]
-    
-    let weeklyTasks = ["Check inside all cabins",
-                       "Flush all lavatories in cabins",
-                       "Walk the perimeter of property"]
-    
-    let monthlyTasks = ["Test security alarm",
-                        "Test motion detectors",
-                        "Test smoke alarms"]
+    var monthlyTasks = [
+        Task(name: "Test security alarm", type: .monthly, completed: false, lastCompleted: nil),
+        Task(name: "Test motion detectors", type: .monthly, completed: false, lastCompleted: nil),
+        Task(name: "Test smoke alarms", type: .monthly, completed: false, lastCompleted: nil)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func resetList(_ sender: UIBarButtonItem) {
+        
+        let confirm = UIAlertController(title: "Are you sure?", message: "Really reset the list?", preferredStyle:. alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive) {
+            
+            action in
+            
+            for task in 0..<self.dailyTasks.count {
+                self.dailyTasks[task].completed = false
+            }
+            
+            for task in 0..<self.weeklyTasks.count {
+                self.weeklyTasks[task].completed = false
+            }
+            
+            for task in 0..<self.monthlyTasks.count {
+                self.monthlyTasks[task].completed = false
+            }
+            
+            self.tableView.reloadData()
+            
+        }
+        
+        let noAction = UIAlertAction(title: "No", style: .cancel) {
+            action in
+            print("OK")
+        }
+        
+        confirm.addAction(yesAction)
+        confirm.addAction(noAction)
+        
+        present(confirm, animated: true, completion: nil)
+    }
+    
     
     @IBAction func toggleDarkMode(_ sender: UISwitch) {
         if sender.isOn {
@@ -56,7 +95,6 @@ class ViewController: UIViewController  {
             }
         }
     }
-    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -84,6 +122,30 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let completeAction = UIContextualAction(style: .normal, title: "Complete") { (action: UIContextualAction, sourceView: UIView, actionPerformed: (Bool) -> Void) in
+            
+            switch indexPath.section {
+            case 0:
+                self.dailyTasks[indexPath.row].completed = true
+            case 1:
+                self.weeklyTasks[indexPath.row].completed = true
+            case 2:
+                self.monthlyTasks[indexPath.row].completed = true
+            default:
+                break
+            }
+            
+            tableView.reloadData()
+            actionPerformed(true)
+            
+        }
+        
+        return UISwipeActionsConfiguration(actions: [completeAction])
+        
+    
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -98,24 +160,35 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var currentTask: Task!
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
         
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = dailyTasks[indexPath.row]
-            cell.imageView?.image = UIImage(named: "clock")
-            cell.accessoryType = .disclosureIndicator
-            cell.detailTextLabel?.text = "More creepy details"
+            currentTask = dailyTasks[indexPath.row]
         case 1:
-            cell.textLabel?.text = weeklyTasks[indexPath.row]
+            currentTask = weeklyTasks[indexPath.row]
         case 2:
-            cell.textLabel?.text = monthlyTasks[indexPath.row]
+            currentTask = monthlyTasks[indexPath.row]
         default:
-            cell.textLabel?.text = "Should not happen"
+            break
         }
+        
+        cell.textLabel?.text = currentTask.name
+        
+        if currentTask.completed {
+            cell.textLabel?.textColor = UIColor.lightGray
+            cell.accessoryType = .checkmark
+        } else {
+            cell.textLabel?.textColor = UIColor.black
+            cell.accessoryType = .none
+        }
+        
+        
+        
         cell.backgroundColor = UIColor.clear
         return cell
-        
     }
 }
 
