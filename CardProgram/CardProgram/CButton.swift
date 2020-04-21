@@ -23,18 +23,13 @@ class CButton: UIButton {
         super.init(frame: .zero)
         self.backgroundColor = backgroundColor
         setTitle(title, for: .normal)
-        
+        configure()
     }
-    
-    
     
     func configure() {
         layer.cornerRadius = 8
         titleLabel?.font = .systemFont(ofSize: 19, weight: .bold)
         setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        
     }
 }
