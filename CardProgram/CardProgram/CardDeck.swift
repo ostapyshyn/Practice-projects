@@ -1,14 +1,15 @@
 //
-//  Deck.swift
-//  CardWorkout
+//  CardDeck.swift
+//  CardProgram
 //
-//  Created by Volodymyr Ostapyshyn on 15.04.2020.
+//  Created by Volodymyr Ostapyshyn on 22.04.2020.
 //  Copyright © 2020 Volodymyr Ostapyshyn. All rights reserved.
 //
+
 import UIKit
 
 
-struct Deck {
+struct CardDeck {
 
     static var allValues = [
         UIImage(named: "2H")!,
