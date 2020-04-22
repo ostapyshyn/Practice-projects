@@ -13,6 +13,7 @@
 		0BB966B9245065CE002765A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB966B8245065CE002765A2 /* Assets.xcassets */; };
 		0BB966BC245065CE002765A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB966BB245065CE002765A2 /* Preview Assets.xcassets */; };
 		0BB966BF245065CE002765A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB966BD245065CE002765A2 /* LaunchScreen.storyboard */; };
+		0BC1EAE62450A303005046AA /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1EAE52450A303005046AA /* Video.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0BB966BB245065CE002765A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BB966BE245065CE002765A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BB966C0245065CE002765A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BC1EAE52450A303005046AA /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				0BB966B8245065CE002765A2 /* Assets.xcassets */,
 				0BB966BD245065CE002765A2 /* LaunchScreen.storyboard */,
 				0BB966C0245065CE002765A2 /* Info.plist */,
+				0BC1EAE52450A303005046AA /* Video.swift */,
 				0BB966BA245065CE002765A2 /* Preview Content */,
 			);
 			path = "SwiftUI-Screens";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BB966B3245065CA002765A2 /* AppDelegate.swift in Sources */,
+				0BC1EAE62450A303005046AA /* Video.swift in Sources */,
 				0BB966B5245065CA002765A2 /* SceneDelegate.swift in Sources */,
 				0BB966B7245065CA002765A2 /* ContentView.swift in Sources */,
 			);
