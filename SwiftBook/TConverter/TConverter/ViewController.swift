@@ -12,7 +12,13 @@ class ViewController: UIViewController {
     
     @IBOutlet var celciusLabel: UILabel!
     @IBOutlet var fahrenheitLabel: UILabel!
-    @IBOutlet var slider: UISlider!
+    @IBOutlet var slider: UISlider! {
+        didSet {
+            slider.minimumValue = -50
+            slider.maximumValue = 100
+            slider.value        = 0
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func slderChanged(_ sender: UISlider) {
+        let tempCel = Int(round(sender.value))
+        celciusLabel.text = "\(tempCel)ºC"
+        let fahrenTemp = Int(round((sender.value * 9 / 5) + 32))
+        fahrenheitLabel.text = "\(fahrenTemp)ºF"
         
     }
     
