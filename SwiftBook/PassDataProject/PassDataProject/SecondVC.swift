@@ -10,15 +10,19 @@ import UIKit
 
 class SecondVC: UIViewController {
     
+    var login: String?
+    
     @IBOutlet var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let login = login else { return }
+        label.text = "Hello \(login)!"
         // Do any additional setup after loading the view.
     }
     
     @IBAction func goBackButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "main", sender: nil)
         
     }
     
