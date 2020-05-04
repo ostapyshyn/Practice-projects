@@ -8,16 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConversionVC: UIViewController {
     
     var gradientLayer: CAGradientLayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ConversionViewController loaded its view.")
         //Silver Challenge
         //createGradientLayer()
         
     }
+
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        view.backgroundColor = UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1.0)
+    }
+    
     
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
