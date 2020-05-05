@@ -1,36 +1,81 @@
 //
-//  EmojiTableViewController.swift
+//  NewEmojiTableViewController.swift
 //  EmojiReader
 //
-//  Created by Volodymyr Ostapyshyn on 03.04.2020.
+//  Created by Volodymyr Ostapyshyn on 04.05.2020.
 //  Copyright © 2020 Volodymyr Ostapyshyn. All rights reserved.
 //
 
 import UIKit
 
-class EmojiTableViewController: UITableViewController {
-
+class NewEmojiTableViewController: UITableViewController {
+    @IBOutlet var emojiTF: UITextField!
+    @IBOutlet var nameTF: UITextField!
+    @IBOutlet var descriptionTF: UITextField!
+    
+    var emoji = Emoji(emoji: "", name: "", description: "", isFavourite: false)
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
+        updateSaveButtonsState()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    private func updateUI() {
+        emojiTF.text = emoji.emoji
+        nameTF.text = emoji.name
+        descriptionTF.text = emoji.description
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "save" else { return }
+        
+        let emoji = emojiTF.text ?? ""
+        let name = nameTF.text ?? ""
+        let description = descriptionTF.text ?? ""
+        
+        self.emoji = Emoji(emoji: emoji, name: name, description: description, isFavourite: self.emoji.isFavourite)
+        
+        
+    }
+    
+    
+    @IBOutlet var saveButton: UIBarButtonItem!
+    
 
+    
+    @IBAction func textChanged(_ sender: UITextField) {
+        updateSaveButtonsState()
+    }
+    
+    
+    private func updateSaveButtonsState() {
+        let emojiText = emojiTF.text ?? ""
+        let nameText = nameTF.text ?? ""
+        let descriptionText = descriptionTF.text ?? ""
+        
+        saveButton.isEnabled = !emojiText.isEmpty && !nameText.isEmpty && !descriptionText.isEmpty
+        
+        
+    }
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
