@@ -30,6 +30,15 @@ class PhotosCVC: UICollectionViewController {
         
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "photo" {
+            let photoVC = segue.destination as! PhotoVC
+            let cell = sender as! PhotoCell
+            photoVC.image = cell.dogImageView.image
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

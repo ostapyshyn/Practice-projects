@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,6 +44,7 @@
                                 <size key="customSize" width="100" height="100"/>
                                 <connections>
                                     <outlet property="dogImageView" destination="l4n-Gj-m4I" id="sYq-wH-nz3"/>
+                                    <segue destination="Cg0-1K-VNm" kind="presentation" identifier="photo" id="bdU-3V-Epf"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -56,6 +58,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJc-Lb-Tho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1105.7971014492755" y="147.99107142857142"/>
+        </scene>
+        <!--PhotoVC-->
+        <scene sceneID="7ss-vm-w9g">
+            <objects>
+                <viewController id="Cg0-1K-VNm" customClass="PhotoVC" customModule="PhotoTapps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1fb-2c-OEX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qmv-mL-GeR">
+                                <rect key="frame" x="0.0" y="315.5" width="414" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="f2S-FT-VWz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRe-Dp-Pon">
+                                <rect key="frame" x="141.5" y="748" width="131" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Tap to Share" image="square.and.arrow.up" catalog="system">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapToShare:" destination="Cg0-1K-VNm" eventType="touchUpInside" id="Jxt-4a-6VX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="LRe-Dp-Pon" firstAttribute="centerX" secondItem="1fb-2c-OEX" secondAttribute="centerX" id="3oY-CG-MiV"/>
+                            <constraint firstItem="7iP-eE-ShX" firstAttribute="bottom" secondItem="LRe-Dp-Pon" secondAttribute="bottom" constant="36" id="Hcz-Oh-s8h"/>
+                            <constraint firstItem="qmv-mL-GeR" firstAttribute="centerY" secondItem="1fb-2c-OEX" secondAttribute="centerY" id="Pk9-Gb-cPI"/>
+                            <constraint firstItem="7iP-eE-ShX" firstAttribute="trailing" secondItem="qmv-mL-GeR" secondAttribute="trailing" id="n4g-sl-6j1"/>
+                            <constraint firstItem="qmv-mL-GeR" firstAttribute="leading" secondItem="7iP-eE-ShX" secondAttribute="leading" id="xPb-i4-lg1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7iP-eE-ShX"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewImage" destination="qmv-mL-GeR" id="VWk-Zh-fFi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecU-u1-qZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886.9565217391305" y="147.99107142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uTb-6y-qna">
@@ -76,4 +122,7 @@
             <point key="canvasLocation" x="195.6521739130435" y="147.99107142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+    </resources>
 </document>
