@@ -38,6 +38,14 @@ class ViewController: UIViewController {
 //        tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "second" {
+            let index = tableView.indexPathForSelectedRow!.row
+            (segue.destination as! ShowVC).strData = dataArray[index]
+        }
+        
+    }
+    
 
 }
 
@@ -48,6 +56,10 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "second", sender: self)
     }
 }
 
