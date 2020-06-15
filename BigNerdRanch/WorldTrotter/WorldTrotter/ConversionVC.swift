@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversionVC: UIViewController {
+class ConversionVC: UIViewController, UITextFieldDelegate {
     
     var gradientLayer: CAGradientLayer!
     @IBOutlet var celsiusLabel: UILabel!
@@ -17,6 +17,29 @@ class ConversionVC: UIViewController {
     var fahrenheitValue: Measurement<UnitTemperature>? {
         didSet {
             updateCelsiusLabel()
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("Current text: \(textField.text)")
+        print("Replacement text: <\(string)> ", terminator: "")
+        
+        let allowedCharacterSet = CharacterSet(charactersIn: "0123456789.")
+        let replacementStringCharacterSet = CharacterSet(charactersIn: string)
+        if !replacementStringCharacterSet.isSubset(of: allowedCharacterSet) {
+            print("Rejected (Invalid Character)")
+            return false
+        }
+        
+        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+        let replacementTextHasDecimalSeparator = string.range(of: ".")
+        if existingTextHasDecimalSeparator != nil,
+            replacementTextHasDecimalSeparator != nil {
+            print("Rejected (Already has decimal point)")
+            return false
+        } else {
+            print("Accepted")
+            return true
         }
     }
     
@@ -73,7 +96,7 @@ class ConversionVC: UIViewController {
     
     func updateCelsiusLabel() {
         if let celsiusValue = celsiusValue {
-           // celsiusLabel.text = "\(celsiusValue.value)"
+            // celsiusLabel.text = "\(celsiusValue.value)"
             celsiusLabel.text = numberFormatter.string(from: NSNumber(value: celsiusValue.value))
         } else {
             celsiusLabel.text = "???"

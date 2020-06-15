@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CurrencyCourses
+//  cornell_2
 //
-//  Created by Volodymyr Ostapyshyn on 03.06.2020.
+//  Created by Volodymyr Ostapyshyn on 15.06.2020.
 //  Copyright © 2020 Volodymyr Ostapyshyn. All rights reserved.
 //
 
@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Model.shared.parseXML()
         return true
     }
 

@@ -28,17 +28,25 @@ class Currency {
     
 }
 
-class Model: NSObject {
+class Model: NSObject, XMLParserDelegate {
     static let shared = Model()
     
     var currencies: [Currency] = []
     
     var pathForXML: String {
-        return ""
+        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/data.xml"
+        print(path)
+        
+        if FileManager.default.fileExists(atPath: path) {
+            return path
+        }
+        
+        
+        return Bundle.main.path(forResource: "data", ofType: "xml")!
     }
     
-    var urlForXML: URL? {
-        return nil
+    var urlForXML: URL {
+        return URL(fileURLWithPath: pathForXML)
     }
     
     func loadXMLFile(data: Data) {
@@ -46,6 +54,48 @@ class Model: NSObject {
     }
     
     func parseXML() {
+        let parcer = XMLParser(contentsOf: urlForXML)
+        parcer?.delegate = self
+        parcer?.parse()
         
+        print(currencies)
     }
+    
+    var currentCurrency: Currency?
+    
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        if elementName == "Valute" {
+            currentCurrency = Currency()
+        }
+    }
+    
+    var currentCharacters: String = ""
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        currentCharacters = string
+    }
+    
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        if elementName == "NumCode" {
+            currentCurrency?.Numcode = currentCharacters
+        }
+        if elementName == "CharCode" {
+            currentCurrency?.CharCode = currentCharacters
+        }
+        if elementName == "Nominal" {
+            currentCurrency?.Nomial = currentCharacters
+            currentCurrency?.nominalDouble = Double(currentCharacters.replacingOccurrences(of: ",", with: "."))
+        }
+        if elementName == "Name" {
+            currentCurrency?.Name = currentCharacters
+        }
+        if elementName == "Value" {
+            currentCurrency?.Value = currentCharacters
+        }
+        if elementName == "Valute" {
+            currencies.append(currentCurrency!)
+            currentCurrency?.valueDouble = Double(currentCharacters.replacingOccurrences(of: ",", with: "."))
+            
+        }
+    }
+    
 }
