@@ -70,6 +70,7 @@ class ViewController: UIViewController {
         ])
 
         NSLayoutConstraint.activate([
+            followButton.widthAnchor.constraint(equalToConstant: 85),
             followButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15),
             followButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
