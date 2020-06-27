@@ -17,7 +17,8 @@ class ViewController3: UIViewController {
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     /*

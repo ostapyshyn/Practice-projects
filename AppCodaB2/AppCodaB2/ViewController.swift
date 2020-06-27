@@ -23,17 +23,11 @@ class ViewController: UIViewController {
             let alertController = UIAlertController(title: "Meaning", message: names[wordToLookup] , preferredStyle: UIAlertController.Style.alert)
             alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             present(alertController, animated: true, completion: nil)
-            
             print(sender.titleLabel?.text ?? "error")
-            
-            
             print("===")
             print(sender.currentTitle!)
             
         }
-        
     }
-    
-    
 }
 
