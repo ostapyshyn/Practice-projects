@@ -34,12 +34,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CustomCell
 
         let model = users[indexPath.row]
-        cell.textLabel?.text = model.name
-        cell.detailTextLabel?.text = model.age
-        cell.imageView?.image = #imageLiteral(resourceName: "one.jpeg")
+        
+        cell.configure(with: model)
+        
+//        cell.textLabel?.text = model.name
+//        cell.detailTextLabel?.text = model.age
+//        cell.imageView?.image = #imageLiteral(resourceName: "one.jpeg")
         return cell
     }
 

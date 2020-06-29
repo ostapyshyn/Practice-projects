@@ -9,6 +9,16 @@
 import UIKit
 
 class CustomCell: UITableViewCell {
+    
+    @IBOutlet var label1: UILabel!
+    @IBOutlet var label2: UILabel!
+    
+    func configure(with user: UserModel) {
+        label1.text = user.age
+        label2.text = user.name
+        
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
