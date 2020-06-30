@@ -25,6 +25,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         users.append(UserModel(name: "Misha", age: "38"))
         users.append(UserModel(name: "Tanya", age: "39"))
         
+        //let cellNib = UINib(nibName: "CustomCell", bundle: nil)
+                
+        //tableView.register(CustomCell.cellNib(), forCellReuseIdentifier: CustomCell.cellIdentifier())
+        
+        tableView.registerCustomCell(CustomCell.self)
+            
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -34,7 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.cellIdentifier(), for: indexPath) as! CustomCell
 
         let model = users[indexPath.row]
         

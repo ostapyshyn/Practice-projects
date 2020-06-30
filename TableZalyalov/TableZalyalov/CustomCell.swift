@@ -8,7 +8,15 @@
 
 import UIKit
 
-class CustomCell: UITableViewCell {
+
+protocol CustomTableCell {
+    
+    static func cellNib() -> UINib?
+    
+    static func cellIdentifier() -> String
+}
+
+class CustomCell: UITableViewCell, CustomTableCell {
     
     @IBOutlet var label1: UILabel!
     @IBOutlet var label2: UILabel!
@@ -28,7 +36,20 @@ class CustomCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        
+        
         // Configure the view for the selected state
     }
 
+}
+
+extension UITableViewCell {
+    
+    static func cellNib() -> UINib? {
+        return UINib(nibName: String(describing: self), bundle: nil)
+    }
+    
+    static func cellIdentifier() -> String {
+        return String(describing: self)
+    }
 }
