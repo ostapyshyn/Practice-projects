@@ -69,6 +69,76 @@ class RestaurantTableVC: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+        let checkAction = UIContextualAction(style: .normal, title: "Check") { (action, sourceView, completionHandler) in
+            
+            if action.image == UIImage(named: "undo") {
+                cell.checkMarkImage.isHidden = true
+                self.restaurantIsVisited[indexPath.row] = false
+            } else {
+                cell.checkMarkImage.isHidden = false
+                self.restaurantIsVisited[indexPath.row] = true
+            }
+            
+            
+            completionHandler(true)
+        }
+        
+        
+        checkAction.backgroundColor = UIColor.green
+        if !cell.checkMarkImage.isHidden {
+            checkAction.image = UIImage(named: "undo")
+        } else {
+            checkAction.image = UIImage(named: "tick")
+            
+        }
+        
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkAction])
+        return swipeConfiguration
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            // Delete the row from the data source
+            self.restaurantNames.remove(at: indexPath.row)
+            self.restaurantLocations.remove(at: indexPath.row)
+            self.restaurantTypes.remove(at: indexPath.row)
+            self.restaurantIsVisited.remove(at: indexPath.row)
+            self.restaurantImages.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            // Call completion handler to dismiss the action button
+            
+            completionHandler(true)
+        }
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action , sourceView, completionHandler) in
+            let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
+            
+            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            
+            if let popoverController = activityController.popoverPresentationController { if let cell = tableView.cellForRow(at: indexPath) {
+            popoverController.sourceView = cell
+            popoverController.sourceRect = cell.bounds }
+            }
+            
+            
+                self.present(activityController, animated: true, completion: nil)
+                completionHandler(true)
+        }
+        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+        deleteAction.image = UIImage(named: "delete")
+        shareAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+        shareAction.image = UIImage(named: "share")
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        return swipeConfiguration
+    }
+    
+    
+    
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
