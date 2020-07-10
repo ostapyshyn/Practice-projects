@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zSZ-sL-tjX">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P3z-BZ-5lF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16097"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Restaurant TableVC-->
+        <!--Food Pin-->
         <scene sceneID="4cR-bz-CwW">
             <objects>
                 <tableViewController id="zSZ-sL-tjX" customClass="RestaurantTableVC" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0rV-cv-Tgc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="82" id="fg0-wE-X5D" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="82"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fg0-wE-X5D" id="hIg-UG-4qL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="65F-1G-LJU">
-                                            <rect key="frame" x="22" y="11" width="337" height="60"/>
+                                            <rect key="frame" x="26" y="11" width="368" height="60"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6uQ-oY-DJh">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -33,7 +34,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="9j0-xz-hdQ">
-                                                    <rect key="frame" x="75" y="1" width="262" height="58.5"/>
+                                                    <rect key="frame" x="75" y="1" width="293" height="58.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USR-1d-ePa">
                                                             <rect key="frame" x="0.0" y="0.0" width="47" height="20.5"/>
@@ -54,9 +55,12 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="293" id="TN4-Dh-vzW"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="FhL-Vm-9aU">
-                                                    <rect key="frame" x="337" y="19.5" width="22" height="21"/>
+                                                    <rect key="frame" x="368" y="19.5" width="22" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Wm9-eB-NHi"/>
                                                         <constraint firstAttribute="width" constant="22" id="Ypz-Bh-DTe"/>
@@ -78,6 +82,7 @@
                                     <outlet property="nameLabel" destination="USR-1d-ePa" id="aw4-nE-WnG"/>
                                     <outlet property="thumbnailImageView" destination="6uQ-oY-DJh" id="d8T-4A-Pxd"/>
                                     <outlet property="typeLabel" destination="45m-ri-Ffc" id="uyN-XQ-8Kj"/>
+                                    <segue destination="eSI-gs-duF" kind="show" identifier="showRestaurantDetail" id="6HE-tr-iCo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -86,8 +91,84 @@
                             <outlet property="delegate" destination="zSZ-sL-tjX" id="GP4-yM-Y2H"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Food Pin" id="XHo-vH-lTX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lM-l6-Dgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="138.0809595202399"/>
+        </scene>
+        <!--Restaurant Detail View Controller-->
+        <scene sceneID="W9L-rn-Ldb">
+            <objects>
+                <viewController id="eSI-gs-duF" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bDd-nq-6Hk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1t0-0h-XpM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtJ-nk-iFM">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siR-Ot-KqV">
+                                <rect key="frame" x="174" y="382" width="66.5" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYS-jP-VLk">
+                                <rect key="frame" x="186" y="480.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1t0-0h-XpM" firstAttribute="trailing" secondItem="8dO-EM-iCC" secondAttribute="trailing" id="2Cx-mN-ynS"/>
+                            <constraint firstAttribute="bottom" secondItem="1t0-0h-XpM" secondAttribute="bottom" id="FgK-WQ-qO8"/>
+                            <constraint firstItem="oYS-jP-VLk" firstAttribute="top" secondItem="BtJ-nk-iFM" secondAttribute="bottom" constant="22" id="N5X-Gq-ufa"/>
+                            <constraint firstItem="oYS-jP-VLk" firstAttribute="centerX" secondItem="bDd-nq-6Hk" secondAttribute="centerX" id="W40-bu-kUf"/>
+                            <constraint firstItem="siR-Ot-KqV" firstAttribute="centerX" secondItem="bDd-nq-6Hk" secondAttribute="centerX" id="efk-Pi-E21"/>
+                            <constraint firstItem="1t0-0h-XpM" firstAttribute="top" secondItem="8dO-EM-iCC" secondAttribute="top" id="lGA-7D-Yt3"/>
+                            <constraint firstItem="BtJ-nk-iFM" firstAttribute="centerY" secondItem="bDd-nq-6Hk" secondAttribute="centerY" id="mX1-Bu-A9b"/>
+                            <constraint firstItem="BtJ-nk-iFM" firstAttribute="centerX" secondItem="bDd-nq-6Hk" secondAttribute="centerX" id="q2z-jO-98C"/>
+                            <constraint firstItem="BtJ-nk-iFM" firstAttribute="top" secondItem="siR-Ot-KqV" secondAttribute="bottom" constant="22" id="tq4-IO-bNf"/>
+                            <constraint firstItem="1t0-0h-XpM" firstAttribute="leading" secondItem="8dO-EM-iCC" secondAttribute="leading" id="zcO-sG-8h1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8dO-EM-iCC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9zn-av-22v"/>
+                    <connections>
+                        <outlet property="location" destination="oYS-jP-VLk" id="lns-U3-5ud"/>
+                        <outlet property="name" destination="siR-Ot-KqV" id="mah-TR-ye3"/>
+                        <outlet property="restaurantImageView" destination="1t0-0h-XpM" id="d6I-4v-GtW"/>
+                        <outlet property="type" destination="BtJ-nk-iFM" id="44A-SD-LQ5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mMk-Sj-vQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756.521739130435" y="139.95535714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7iB-oy-jbW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P3z-BZ-5lF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bs8-eA-iLq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zSZ-sL-tjX" kind="relationship" relationship="rootViewController" id="hfF-HP-dfz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0LD-1M-ciB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-55.200000000000003" y="138.0809595202399"/>
         </scene>

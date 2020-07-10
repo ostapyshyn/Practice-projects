@@ -22,7 +22,7 @@ class RestaurantTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        navigationController?.navigationBar.prefersLargeTitles = true
         tableView.cellLayoutMarginsFollowReadableWidth = true // for ipad
         
         // Uncomment the following line to preserve selection between presentations
@@ -44,6 +44,19 @@ class RestaurantTableVC: UITableViewController {
         return restaurantNames.count
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RestaurantDetailViewController
+                destinationController.restaurantImageName = restaurantImages[indexPath.row]
+                destinationController.nameCafe = restaurantNames[indexPath.row]
+                destinationController.locationCafe = restaurantLocations[indexPath.row]
+                destinationController.typeCafe = restaurantTypes[indexPath.row]
+            }
+        }
+    }
+    
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! RestaurantTableViewCell
@@ -54,7 +67,7 @@ class RestaurantTableVC: UITableViewController {
         
         cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
         cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.bounds.width / 2
-
+        
         cell.thumbnailImageView.clipsToBounds = true
         
         if restaurantIsVisited[indexPath.row] {
@@ -119,13 +132,13 @@ class RestaurantTableVC: UITableViewController {
             let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
             
             if let popoverController = activityController.popoverPresentationController { if let cell = tableView.cellForRow(at: indexPath) {
-            popoverController.sourceView = cell
-            popoverController.sourceRect = cell.bounds }
+                popoverController.sourceView = cell
+                popoverController.sourceRect = cell.bounds }
             }
             
             
-                self.present(activityController, animated: true, completion: nil)
-                completionHandler(true)
+            self.present(activityController, animated: true, completion: nil)
+            completionHandler(true)
         }
         deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
         deleteAction.image = UIImage(named: "delete")
@@ -139,59 +152,59 @@ class RestaurantTableVC: UITableViewController {
     
     
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Create an option menu as an action sheet
-        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-        if let popoverController = optionMenu.popoverPresentationController { if let cell = tableView.cellForRow(at: indexPath) {
-        popoverController.sourceView = cell
-        popoverController.sourceRect = cell.bounds }
-        }
-        // Add actions to the menu
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil )
-        optionMenu.addAction(cancelAction)
-        // Add Call action
-        let callActionHandler = { (action:UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil ))
-            self.present(alertMessage, animated: true, completion: nil) }
-        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
-        optionMenu.addAction(callAction)
-        
-        let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
-        
-        if cell.checkMarkImage.isHidden == false {
-            let checkInAction = UIAlertAction(title: "Undo Check in", style: .default, handler: { (action:UIAlertAction!) -> Void in//The above code shows you another way to use closure. You can write the closure inline as a parameter of the handler. This is the preferred way as the code is clearer and more readable.
-                //let cell = tableView.cellForRow(at: indexPath)
-                //cell?.accessoryType = .none
-                cell.checkMarkImage.isHidden = true
-                self.restaurantIsVisited[indexPath.row] = false
-            })
-            optionMenu.addAction(checkInAction)
-            
-        } else {
-            // Check-in action
-            let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: { (action:UIAlertAction!) -> Void in//The above code shows you another way to use closure. You can write the closure inline as a parameter of the handler. This is the preferred way as the code is clearer and more readable.
-                //let cell = tableView.cellForRow(at: indexPath)
-                //var imageView = UIImageView(image: UIImage(named:"heart-tick"))
-                //imageView  = UIImageView(image: UIImage(named: "heart-tick"))
-                cell.checkMarkImage.isHidden = false
-
-                // then set it as cellAccessoryType
-                //cell!.accessoryView = imageView
-                //cell?.accessoryType = .checkmark
-                self.restaurantIsVisited[indexPath.row] = true
-            })
-            optionMenu.addAction(checkInAction)
-        }
-        
-        
-        
-        
-        // Display the menu
-        present(optionMenu, animated: true, completion: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
+    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        // Create an option menu as an action sheet
+    //        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+    //        if let popoverController = optionMenu.popoverPresentationController { if let cell = tableView.cellForRow(at: indexPath) {
+    //        popoverController.sourceView = cell
+    //        popoverController.sourceRect = cell.bounds }
+    //        }
+    //        // Add actions to the menu
+    //        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil )
+    //        optionMenu.addAction(cancelAction)
+    //        // Add Call action
+    //        let callActionHandler = { (action:UIAlertAction!) -> Void in
+    //            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .alert)
+    //            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil ))
+    //            self.present(alertMessage, animated: true, completion: nil) }
+    //        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
+    //        optionMenu.addAction(callAction)
+    //
+    //        let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+    //
+    //        if cell.checkMarkImage.isHidden == false {
+    //            let checkInAction = UIAlertAction(title: "Undo Check in", style: .default, handler: { (action:UIAlertAction!) -> Void in//The above code shows you another way to use closure. You can write the closure inline as a parameter of the handler. This is the preferred way as the code is clearer and more readable.
+    //                //let cell = tableView.cellForRow(at: indexPath)
+    //                //cell?.accessoryType = .none
+    //                cell.checkMarkImage.isHidden = true
+    //                self.restaurantIsVisited[indexPath.row] = false
+    //            })
+    //            optionMenu.addAction(checkInAction)
+    //
+    //        } else {
+    //            // Check-in action
+    //            let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: { (action:UIAlertAction!) -> Void in//The above code shows you another way to use closure. You can write the closure inline as a parameter of the handler. This is the preferred way as the code is clearer and more readable.
+    //                //let cell = tableView.cellForRow(at: indexPath)
+    //                //var imageView = UIImageView(image: UIImage(named:"heart-tick"))
+    //                //imageView  = UIImageView(image: UIImage(named: "heart-tick"))
+    //                cell.checkMarkImage.isHidden = false
+    //
+    //                // then set it as cellAccessoryType
+    //                //cell!.accessoryView = imageView
+    //                //cell?.accessoryType = .checkmark
+    //                self.restaurantIsVisited[indexPath.row] = true
+    //            })
+    //            optionMenu.addAction(checkInAction)
+    //        }
+    //
+    //
+    //
+    //
+    //        // Display the menu
+    //        present(optionMenu, animated: true, completion: nil)
+    //
+    //        tableView.deselectRow(at: indexPath, animated: false)
+    //    }
     
     /*
      // Override to support conditional editing of the table view.

@@ -13,6 +13,7 @@
 		0B6F441E24B1D8C20052E40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6F441D24B1D8C20052E40E /* Assets.xcassets */; };
 		0B6F442124B1D8C20052E40E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6F441F24B1D8C20052E40E /* LaunchScreen.storyboard */; };
 		0B6F442924B1E0800052E40E /* RestaurantTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6F442824B1E0800052E40E /* RestaurantTableVC.swift */; };
+		0B6F532524B8541A00E40DAE /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6F532424B8541A00E40DAE /* RestaurantDetailViewController.swift */; };
 		0B71421C24B2ECA4006096E2 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71421B24B2ECA4006096E2 /* RestaurantTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		0B6F442024B1D8C20052E40E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B6F442224B1D8C20052E40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B6F442824B1E0800052E40E /* RestaurantTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableVC.swift; sourceTree = "<group>"; };
+		0B6F532424B8541A00E40DAE /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		0B71421B24B2ECA4006096E2 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				0B6F441A24B1D8BE0052E40E /* Main.storyboard */,
 				0B71421B24B2ECA4006096E2 /* RestaurantTableViewCell.swift */,
 				0B6F442824B1E0800052E40E /* RestaurantTableVC.swift */,
+				0B6F532424B8541A00E40DAE /* RestaurantDetailViewController.swift */,
 				0B6F441D24B1D8C20052E40E /* Assets.xcassets */,
 				0B6F441F24B1D8C20052E40E /* LaunchScreen.storyboard */,
 				0B6F442224B1D8C20052E40E /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				0B71421C24B2ECA4006096E2 /* RestaurantTableViewCell.swift in Sources */,
 				0B6F442924B1E0800052E40E /* RestaurantTableVC.swift in Sources */,
+				0B6F532524B8541A00E40DAE /* RestaurantDetailViewController.swift in Sources */,
 				0B6F441524B1D8BE0052E40E /* AppDelegate.swift in Sources */,
 				0B6F441724B1D8BE0052E40E /* SceneDelegate.swift in Sources */,
 			);
