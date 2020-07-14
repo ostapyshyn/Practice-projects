@@ -24,7 +24,14 @@ class RestaurantDetailHeaderView: UIView {
             
         }
     }
-    @IBOutlet var heartImageView: UIImageView!
+    
+    @IBOutlet var heartImageView: UIImageView! {
+        didSet {
+        heartImageView.image = UIImage(named: "heart-tick")?.withRenderingMode(.alwaysTemplate)
+        heartImageView.tintColor = .white
+            
+        }
+    }
 
 
 }

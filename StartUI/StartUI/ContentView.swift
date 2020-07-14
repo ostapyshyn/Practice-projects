@@ -12,9 +12,17 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             Text("I Am Rich")
+                .bold()
             Text("I Am Rich")
+                .font(.largeTitle)
+            Text("I Am Rich True")
+                .padding([.top, .bottom])
+                .cornerRadius(15)
             Text("I Am Rich")
-            Text("I Am Rich")
+                .padding(.horizontal)
+                .background(Color.gray)
+                .cornerRadius(15)
+                
             
         }
         
