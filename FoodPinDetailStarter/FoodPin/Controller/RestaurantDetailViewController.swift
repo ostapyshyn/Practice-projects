@@ -20,7 +20,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         tableView.delegate = self
         tableView.dataSource = self
         navigationItem.largeTitleDisplayMode = .never
-        
+        tableView.separatorStyle = .none
         // Configure header view
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
