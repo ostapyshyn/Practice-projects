@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B268E7424C4DC890006A3AD /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B268E7324C4DC890006A3AD /* UIColor+Ext.swift */; };
 		0B45365424BB608300453C54 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B45364A24BB608200453C54 /* Rubik-Medium.ttf */; };
 		0B45365524BB608300453C54 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B45364B24BB608200453C54 /* Rubik-Light.ttf */; };
 		0B45365624BB608300453C54 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B45364C24BB608200453C54 /* Rubik-Regular.ttf */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B268E7324C4DC890006A3AD /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		0B45364A24BB608200453C54 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		0B45364B24BB608200453C54 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
 		0B45364C24BB608200453C54 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B268E7224C4DC570006A3AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B268E7324C4DC890006A3AD /* UIColor+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0B45364824BB5FAF00453C54 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		F44705AC211AF99E002E0327 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				0B268E7224C4DC570006A3AD /* Extensions */,
 				0B45364824BB5FAF00453C54 /* Resources */,
 				F481ACB4212345BB00B6DC2F /* Storyboard */,
 				F481ACB5212345CE00B6DC2F /* Model */,
@@ -247,6 +258,7 @@
 				F44705C0211AFFE1002E0327 /* RestaurantTableViewController.swift in Sources */,
 				F463DF78211D35A600F73F88 /* RestaurantTableViewCell.swift in Sources */,
 				F481ACB0212188AD00B6DC2F /* RestaurantDetailViewController.swift in Sources */,
+				0B268E7424C4DC890006A3AD /* UIColor+Ext.swift in Sources */,
 				0B6FBF6724BDB7FD0048F6EF /* RestaurantDetailIconTextCell.swift in Sources */,
 				F44705AE211AF99E002E0327 /* AppDelegate.swift in Sources */,
 			);
