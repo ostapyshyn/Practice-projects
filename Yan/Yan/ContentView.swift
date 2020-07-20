@@ -10,21 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack() {
-            
-            Image("roc")
-            Text("World!")
-                .font(.largeTitle)
-                .foregroundColor(Color.white)
-                .background(Color.gray)
-            
-            
-            
-            
-            
-            
-            
-        }
+        Text("Hello")
+            .background(Image("roc")
+                .resizable()
+            .frame(width: 200, height: 200))
+        
+        
+
+        
+        
         
     }
 }
