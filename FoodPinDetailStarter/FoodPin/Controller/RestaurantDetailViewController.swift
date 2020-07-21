@@ -18,8 +18,12 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
-        
+        setNeedsStatusBarAppearanceUpdate()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        navigationController?.navigationBar.barStyle = .black
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +54,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
     
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
@@ -76,7 +81,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         }
     
     
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     /*
     // MARK: - Navigation

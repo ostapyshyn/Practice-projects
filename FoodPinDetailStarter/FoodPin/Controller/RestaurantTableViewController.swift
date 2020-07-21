@@ -40,8 +40,13 @@ class RestaurantTableViewController: UITableViewController {
         
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
+        setNeedsStatusBarAppearanceUpdate()
         
     }
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -149,6 +154,9 @@ class RestaurantTableViewController: UITableViewController {
         
         return swipeConfiguration
     }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     // MARK: - Navigation Prepare
     

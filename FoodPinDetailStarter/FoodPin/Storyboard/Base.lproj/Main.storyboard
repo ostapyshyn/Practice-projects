@@ -111,7 +111,7 @@
         <!--Restaurant Detail View Controller-->
         <scene sceneID="7Al-S6-LLM">
             <objects>
-                <viewController id="MwY-PD-f7e" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="light" id="MwY-PD-f7e" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Edt-og-S5F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,10 +265,10 @@
             </objects>
             <point key="canvasLocation" x="1813.5999999999999" y="150.67466266866569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav Controller-->
         <scene sceneID="cmZ-La-i97">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sqn-Qr-6qc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="light" id="Sqn-Qr-6qc" customClass="NavController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2P8-Il-Lal">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -9,15 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showDetail = true // binding
+    
     var body: some View {
-        Text("Hello")
-            .background(Image("roc")
-                .resizable()
-            .frame(width: 200, height: 200))
-        
-        
-
-        
+        VStack {
+            Button(action: {
+                self.showDetail.toggle()
+            }) {
+                Text("Show Hello!")
+            }
+            if showDetail {
+                Text("Details")
+            }
+        }
         
         
     }
