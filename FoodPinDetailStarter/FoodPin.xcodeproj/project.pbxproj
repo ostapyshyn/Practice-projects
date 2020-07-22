@@ -18,6 +18,7 @@
 		0B45365B24BB608300453C54 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B45365124BB608300453C54 /* Rubik-BlackItalic.ttf */; };
 		0B45365C24BB608300453C54 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B45365224BB608300453C54 /* Rubik-Bold.ttf */; };
 		0B45365D24BB608300453C54 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B45365324BB608300453C54 /* Rubik-LightItalic.ttf */; };
+		0B6E622924C857C3002A9ACC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6E622824C857C3002A9ACC /* MapKit.framework */; };
 		0B6FBF6724BDB7FD0048F6EF /* RestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FBF6624BDB7FD0048F6EF /* RestaurantDetailIconTextCell.swift */; };
 		0B6FBF6924BDC3990048F6EF /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FBF6824BDC3990048F6EF /* RestaurantDetailTextCell.swift */; };
 		0B7093C924BC70D600CB90EB /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7093C824BC70D600CB90EB /* RestaurantDetailHeaderView.swift */; };
@@ -45,6 +46,7 @@
 		0B45365124BB608300453C54 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		0B45365224BB608300453C54 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		0B45365324BB608300453C54 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		0B6E622824C857C3002A9ACC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0B6FBF6624BDB7FD0048F6EF /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		0B6FBF6824BDC3990048F6EF /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
 		0B7093C824BC70D600CB90EB /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6E622924C857C3002A9ACC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,11 +110,20 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		0B6E622724C857C3002A9ACC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B6E622824C857C3002A9ACC /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F44705A1211AF99D002E0327 = {
 			isa = PBXGroup;
 			children = (
 				F44705AC211AF99E002E0327 /* FoodPin */,
 				F44705AB211AF99E002E0327 /* Products */,
+				0B6E622724C857C3002A9ACC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -416,13 +428,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44X6M65T9Y;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ostap.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,13 +447,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44X6M65T9Y;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ostap.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -10,22 +10,22 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var colors = ["black", "white", "red", "green", "blue"]
-    @State private var selectedColor = 0
-    
     
     var body: some View {
         
         VStack {
-            Picker(selection: $selectedColor, label: Text("Choose a color")) {
-                ForEach(0..<colors.count) {
-                    Text(self.colors[$0])
-                    
-                    
-                }
-            }.pickerStyle(SegmentedPickerStyle())
-            Text("You selected: \(colors[selectedColor])")
+            
+            Image("roc")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .gesture(DragGesture(minimumDistance: 50)
+                    .onEnded { _ in
+                        print("Dragged")
+                        
+                })
         }
+        
+        
         
     }
 }
