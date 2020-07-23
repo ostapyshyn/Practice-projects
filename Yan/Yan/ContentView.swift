@@ -8,26 +8,36 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    
+
+struct TaskRow: View {
     
     var body: some View {
+        Text("Some Task")
+    }
+}
+
+struct ContentView: View {
+    
+    var body: some View {
+      
         
-        VStack {
-            
-            Image("roc")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .gesture(DragGesture(minimumDistance: 50)
-                    .onEnded { _ in
-                        print("Dragged")
-                        
-                })
-        }
-        
-        
+         List() {
+            Section(header: Text("Important Tasks"), footer:Text("Footer Optional")) {
+                TaskRow()
+                TaskRow()
+                TaskRow()
+                TaskRow()
+            }
+            Section(header: Text("Other Tasks")) {
+                TaskRow()
+                TaskRow()
+                TaskRow()
+                TaskRow()
+            }.listRowBackground(Color.yellow)
+        }.listStyle(GroupedListStyle())
         
     }
+    
 }
 
 
