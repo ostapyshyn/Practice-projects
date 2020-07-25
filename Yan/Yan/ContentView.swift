@@ -9,6 +9,7 @@
 import SwiftUI
 
 
+
 struct TaskRow: View {
     
     var body: some View {
@@ -17,27 +18,43 @@ struct TaskRow: View {
 }
 
 struct ContentView: View {
+   
+    @State private var colors = ["Red", "Green", "Blue"]
+    @State private var selectedColor = 0
+    @State private var additionalSettings = false
     
     var body: some View {
-      
-        
-         List() {
-            Section(header: Text("Important Tasks"), footer:Text("Footer Optional")) {
-                TaskRow()
-                TaskRow()
-                TaskRow()
-                TaskRow()
+        NavigationView {
+            Form {
+                Section(header: Text("Colors")) {
+                    Picker(selection: $selectedColor, label: Text("Choose a color")) {
+                        ForEach(0..<colors.count) {
+                            Text(self.colors[$0])
+                            
+                            
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                }
+                
+
+                Toggle(isOn: $additionalSettings) {
+                    Text("Settings")
+                }
+                
+                Button(action: {
+                    print("Hey!")
+                } ) {
+                    Text("Save changes")
+                        
+                    }.disabled(!additionalSettings)
+            .navigationBarTitle("Settings")
+                
+                
             }
-            Section(header: Text("Other Tasks")) {
-                TaskRow()
-                TaskRow()
-                TaskRow()
-                TaskRow()
-            }.listRowBackground(Color.yellow)
-        }.listStyle(GroupedListStyle())
         
+        
+        }
     }
-    
 }
 
 
