@@ -94,9 +94,17 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMap" {
             let destinationController = segue.destination as! MapViewController
-            destinationController.restaurant = restaurant }
+            destinationController.restaurant = restaurant
+            
+        } else if segue.identifier == "showReview" {
+        let destinationController = segue.destination as! ReviewViewController
+            destinationController.restaurant = restaurant
+        }
     }
     
+    @IBAction func close(segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
