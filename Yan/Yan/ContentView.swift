@@ -9,27 +9,33 @@
 import SwiftUI
 
 
-
-struct TaskRow: View {
-    
-    var body: some View {
-        Text("Some Task")
+struct customModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(.white)
+            .padding()
+            .background(Color.black)
+ 
     }
 }
 
+extension View {
+    func customM() -> some View {
+        self.modifier(customModifier())
+    }
+}
+
+
 struct ContentView: View {
-   
     
-    @State private var showingAlert = false
- 
+    @State private var useGreenText = false
     
     var body: some View {
-        Button("Show Action Sheet") {
-            self.showingAlert = true
-        }.actionSheet(isPresented: $showingAlert) {
-            ActionSheet(title: Text("Hello Swift UI"), message: Text("Some Detail message"), buttons: [.default(Text("Dismiss")), .cancel(), .destructive(Text("LOL"))])
-        }
- 
+        Text("Hello, Swift!")
+        .customM()
+        //.modifier(customModifier())
+        
     }
 }
 
