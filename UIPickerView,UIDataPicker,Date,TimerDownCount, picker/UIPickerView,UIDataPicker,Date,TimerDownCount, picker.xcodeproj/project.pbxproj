@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6F615424D5352900ACF5B4 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6F615324D5352900ACF5B4 /* PickerView.swift */; };
 		0B72C43F24D4A62900AF3052 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72C43E24D4A62900AF3052 /* AppDelegate.swift */; };
 		0B72C44124D4A62900AF3052 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72C44024D4A62900AF3052 /* SceneDelegate.swift */; };
 		0B72C44324D4A62900AF3052 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B72C44224D4A62900AF3052 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B6F615324D5352900ACF5B4 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0B72C43B24D4A62900AF3052 /* UIPickerView,UIDataPicker,Date,TimerDownCount, picker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIPickerView,UIDataPicker,Date,TimerDownCount, picker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B72C43E24D4A62900AF3052 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B72C44024D4A62900AF3052 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				0B72C43E24D4A62900AF3052 /* AppDelegate.swift */,
 				0B72C44024D4A62900AF3052 /* SceneDelegate.swift */,
 				0B72C44224D4A62900AF3052 /* ViewController.swift */,
+				0B6F615324D5352900ACF5B4 /* PickerView.swift */,
 				0B72C44424D4A62900AF3052 /* Main.storyboard */,
 				0B72C44724D4A62B00AF3052 /* Assets.xcassets */,
 				0B72C44924D4A62B00AF3052 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6F615424D5352900ACF5B4 /* PickerView.swift in Sources */,
 				0B72C44324D4A62900AF3052 /* ViewController.swift in Sources */,
 				0B72C43F24D4A62900AF3052 /* AppDelegate.swift in Sources */,
 				0B72C44124D4A62900AF3052 /* SceneDelegate.swift in Sources */,

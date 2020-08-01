@@ -12,30 +12,41 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let picker = UIPickerView()
+    let picker = UIDatePicker()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.center = view.center
-        picker.dataSource = self
+        
+        //picker.datePickerMode = .date
+        picker.datePickerMode = .countDownTimer
+        var oneYearTime = TimeInterval()
+        oneYearTime = 365 * 24 * 60 * 60
+        
+        let todayDate = Date()
+        
+        let oneYearFromToday = todayDate.addingTimeInterval(oneYearTime)
+        let twoYearsFromToday = todayDate.addingTimeInterval(2 * oneYearTime)
+        
+        picker.minimumDate = oneYearFromToday
+        picker.maximumDate = twoYearsFromToday
+        
+        picker.countDownDuration = 2 * 60
+        
         view.addSubview(picker)
-        
-        
-        // Do any additional setup after loading the view.
-    }
-
-
-}
-
-extension ViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        picker.addTarget(self, action: #selector(datePickerChange(paramDatePicker:)), for: .valueChanged)
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
+    @objc func datePickerChange(paramDatePicker: UIDatePicker) {
+        if paramDatePicker.isEqual(self.picker) {
+            print("date change: = ", paramDatePicker.date)
+        }
+        
     }
-    
 }
+
+
+
+
 

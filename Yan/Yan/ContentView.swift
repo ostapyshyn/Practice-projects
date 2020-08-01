@@ -9,32 +9,27 @@
 import SwiftUI
 
 
-struct customModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.largeTitle)
-            .foregroundColor(.white)
-            .padding()
-            .background(Color.black)
- 
-    }
-}
 
-extension View {
-    func customM() -> some View {
-        self.modifier(customModifier())
-    }
-}
 
 
 struct ContentView: View {
     
-    @State private var useGreenText = false
+    @ObservedObject var settings = UserSettings()
     
     var body: some View {
-        Text("Hello, Swift!")
-        .customM()
-        //.modifier(customModifier())
+        VStack {
+            Text("Your score is \(settings.score)  ")
+            Button(action: {
+                self.settings.score += 1
+            }) {
+                Text("Increase Score")
+            }
+            
+            
+            
+        }
+        
+        
         
     }
 }
