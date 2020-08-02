@@ -59,14 +59,14 @@ class ReviewViewController: UIViewController {
         var delay = 0.1
         
         for button in 0..<rateButtons.count {
-            
+
             UIView.animate(withDuration: 0.4, delay: delay, options: [], animations: {
                 self.rateButtons[button].alpha = 1.0
                 self.rateButtons[button].transform = .identity
-                
+
             }, completion: nil)
-            
-            delay += 0.5
+
+            delay += 0.05
         }
         
 //        UIView.animate(withDuration: 0.8, delay: 0.1, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.3, options: [], animations: {
@@ -74,22 +74,22 @@ class ReviewViewController: UIViewController {
 //            self.rateButtons[0].transform = .identity
 //
 //        }, completion: nil)
-        
+//
 //        UIView.animate(withDuration: 0.4, delay: 0.15, options: [], animations: {
 //            self.rateButtons[1].alpha = 1.0
 //            self.rateButtons[1].transform = .identity
 //        }, completion: nil)
-//        
+//
 //        UIView.animate(withDuration: 0.4, delay: 0.2, options: [], animations: {
 //            self.rateButtons[2].alpha = 1.0
 //            self.rateButtons[2].transform = .identity
 //        }, completion: nil)
-//        
+//
 //        UIView.animate(withDuration: 0.4, delay: 0.25, options: [], animations: {
 //            self.rateButtons[3].alpha = 1.0
 //            self.rateButtons[3].transform = .identity
 //        }, completion: nil)
-//        
+//
 //        UIView.animate(withDuration: 0.4, delay: 0.3, options: [], animations: {
 //            self.rateButtons[4].alpha = 1.0
 //            self.rateButtons[4].transform = .identity
