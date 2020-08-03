@@ -18,6 +18,7 @@
 		0B45365B24BB608300453C54 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B45365124BB608300453C54 /* Rubik-BlackItalic.ttf */; };
 		0B45365C24BB608300453C54 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B45365224BB608300453C54 /* Rubik-Bold.ttf */; };
 		0B45365D24BB608300453C54 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B45365324BB608300453C54 /* Rubik-LightItalic.ttf */; };
+		0B52B18324D8945B00A9EDBC /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B52B18224D8945B00A9EDBC /* RoundedTextField.swift */; };
 		0B6D2E8324CDCF6200CE9145 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D2E8224CDCF6200CE9145 /* ReviewViewController.swift */; };
 		0B6E622924C857C3002A9ACC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6E622824C857C3002A9ACC /* MapKit.framework */; };
 		0B6FBF6724BDB7FD0048F6EF /* RestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6FBF6624BDB7FD0048F6EF /* RestaurantDetailIconTextCell.swift */; };
@@ -50,6 +51,7 @@
 		0B45365124BB608300453C54 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		0B45365224BB608300453C54 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		0B45365324BB608300453C54 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		0B52B18224D8945B00A9EDBC /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		0B6D2E8224CDCF6200CE9145 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		0B6E622824C857C3002A9ACC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0B6FBF6624BDB7FD0048F6EF /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				0B6FBF6824BDC3990048F6EF /* RestaurantDetailTextCell.swift */,
 				0B730EA224C9DD6B002A221E /* RestaurantDetailSeparatorCell.swift */,
 				0B730EA424C9E01B002A221E /* RestaurantDetailMapCell.swift */,
+				0B52B18224D8945B00A9EDBC /* RoundedTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				0B730EA324C9DD6B002A221E /* RestaurantDetailSeparatorCell.swift in Sources */,
 				0B730EA524C9E01B002A221E /* RestaurantDetailMapCell.swift in Sources */,
 				0B714BAE24C7398300181E71 /* UINavigationController+Ext.swift in Sources */,
+				0B52B18324D8945B00A9EDBC /* RoundedTextField.swift in Sources */,
 				0B268E7424C4DC890006A3AD /* UIColor+Ext.swift in Sources */,
 				0B6FBF6724BDB7FD0048F6EF /* RestaurantDetailIconTextCell.swift in Sources */,
 				F44705AE211AF99E002E0327 /* AppDelegate.swift in Sources */,

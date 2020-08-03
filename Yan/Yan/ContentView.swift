@@ -8,28 +8,33 @@
 
 import SwiftUI
 
-
-
-
-
-struct ContentView: View {
+struct DetailView: View {
     
-    @ObservedObject var settings = UserSettings()
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
-            Text("Your score is \(settings.score)  ")
-            Button(action: {
-                self.settings.score += 1
-            }) {
-                Text("Increase Score")
+            Text("Detail")
+            Button("Back") {
+                self.presentationMode.wrappedValue.dismiss()
             }
-            
-            
-            
         }
         
-        
+    }
+}
+
+struct ContentView: View {
+    @State private var showingDetail = false
+    
+    
+    var body: some View {
+        Button(action: {
+            self.showingDetail.toggle()
+        }) {
+            Text("Show Detail")
+        }.sheet(isPresented: $showingDetail) {
+            DetailView()
+        }
         
     }
 }
