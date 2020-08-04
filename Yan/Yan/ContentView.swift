@@ -8,32 +8,24 @@
 
 import SwiftUI
 
-struct DetailView: View {
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        VStack {
-            Text("Detail")
-            Button("Back") {
-                self.presentationMode.wrappedValue.dismiss()
-            }
-        }
-        
-    }
+struct User: Codable {
+    var firstName: String
+    var secondName: String
 }
 
+
+
 struct ContentView: View {
-    @State private var showingDetail = false
+    @State private var user = User(firstName: "Ivan", secondName: "Petrov")
     
     
     var body: some View {
-        Button(action: {
-            self.showingDetail.toggle()
-        }) {
-            Text("Show Detail")
-        }.sheet(isPresented: $showingDetail) {
-            DetailView()
+        Button("Save user") {
+            let encoder = JSONEncoder()
+            
+            if let data = try? encoder.encode(self.user) {
+                UserDefaults.standard.set(data, forKey: "Userdata")
+            }
         }
         
     }

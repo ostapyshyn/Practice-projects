@@ -141,7 +141,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeI-Vg-wtD">
-                                            <rect key="frame" x="14" y="271.5" width="196" height="41.5"/>
+                                            <rect key="frame" x="14" y="272" width="188.5" height="41"/>
                                             <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="35"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -406,7 +406,7 @@
         <!--New Restaurant-->
         <scene sceneID="NVE-Rb-VnU">
             <objects>
-                <tableViewController id="mB5-e3-vU9" sceneMemberID="viewController">
+                <tableViewController id="mB5-e3-vU9" customClass="NewRestaurantController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uVP-Wv-VdD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -617,11 +617,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="7Pb-og-SHY" id="3Zy-00-DHB"/>
+                        <outlet property="descriptionTextView" destination="NZL-QG-kH0" id="4hg-4M-B3e"/>
+                        <outlet property="nameTextField" destination="3HI-sx-mee" id="V20-0i-64c"/>
+                        <outlet property="phoneTextField" destination="Krs-YN-9Eq" id="v7a-cE-89J"/>
+                        <outlet property="photoImageView" destination="mOV-zQ-f58" id="U5N-Vu-Aat"/>
+                        <outlet property="typeTextField" destination="R6s-cu-VCB" id="bTx-fK-Rl1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCs-dR-hln" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="POk-gz-PL1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4309" y="-59"/>
+            <point key="canvasLocation" x="4306" y="-54"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="efJ-YZ-88c">
