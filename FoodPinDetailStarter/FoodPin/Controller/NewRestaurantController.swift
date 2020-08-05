@@ -23,7 +23,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         
     }
     
-
+    
     
     @IBOutlet var nameTextField: RoundedTextField! {
         didSet {
@@ -91,8 +91,8 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             })
             
             let photoLibraryAction = UIAlertAction(title: "Photo library", style: .default, handler: { (action) in
-              
-                    if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                
+                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                     let imagePicker = UIImagePickerController()
                     imagePicker.delegate = self
                     imagePicker.allowsEditing = false
@@ -122,7 +122,51 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             photoImageView.contentMode = .scaleAspectFill
             photoImageView.clipsToBounds = true
         }
-            dismiss(animated: true, completion: nil)
+        let leadingConstraint = NSLayoutConstraint(item: photoImageView as Any , attribute: .leading, relatedBy: .equal, toItem: photoImageView.superview , attribute: .leading, multiplier: 1, constant: 0)
+        leadingConstraint.isActive = true
+        
+        let trailingConstraint = NSLayoutConstraint(item: photoImageView as Any , attribute: .trailing, relatedBy: .equal, toItem: photoImageView.superview, attribute: .trailing, multiplier: 1, constant: 0)
+        trailingConstraint.isActive = true
+        
+        let topConstraint = NSLayoutConstraint(item: photoImageView as Any, attribute: .top, relatedBy: .equal, toItem: photoImageView.superview, attribute: .top, multiplier: 1, constant: 0)
+        topConstraint.isActive = true
+        
+        let bottomConstraint = NSLayoutConstraint(item: photoImageView as Any, attribute: .bottom, relatedBy: .equal, toItem: photoImageView.superview, attribute: .bottom, multiplier: 1, constant: 0)
+        bottomConstraint.isActive = true
+        
+        dismiss(animated: true, completion: nil)
+        
     }
+    
+    func alertEmptyField() {
+        let emptyField = UIAlertController(title: "Oops", message: "Choose your photo source", preferredStyle: .alert)
+        emptyField.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        present(emptyField, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        // кожний провірити окремо
+        if let name = nameTextField.text {
+            if name.isEmpty { alertEmptyField() }
+        } else if let type = typeTextField.text {
+            if type.isEmpty { alertEmptyField() }
+        } else if let address = addressTextField.text {
+            if address.isEmpty { alertEmptyField() }
+        } else if let phone = phoneTextField.text {
+            if phone.isEmpty { alertEmptyField() }
+        } else if let description = descriptionTextView.text {
+            if description.isEmpty { alertEmptyField() }
+        } else {
+            print("Print All")
+        }
+        
+        
+        
+    }
+    
+    
+    
     
 }
