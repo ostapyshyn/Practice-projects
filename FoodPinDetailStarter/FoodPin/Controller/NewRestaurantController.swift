@@ -139,7 +139,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
     }
     
     func alertEmptyField() {
-        let emptyField = UIAlertController(title: "Oops", message: "Choose your photo source", preferredStyle: .alert)
+        let emptyField = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are requiered.", preferredStyle: .alert)
         emptyField.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
         present(emptyField, animated: true, completion: nil)
@@ -148,19 +148,27 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         // кожний провірити окремо
-        if let name = nameTextField.text {
-            if name.isEmpty { alertEmptyField() }
-        } else if let type = typeTextField.text {
-            if type.isEmpty { alertEmptyField() }
-        } else if let address = addressTextField.text {
-            if address.isEmpty { alertEmptyField() }
-        } else if let phone = phoneTextField.text {
-            if phone.isEmpty { alertEmptyField() }
-        } else if let description = descriptionTextView.text {
-            if description.isEmpty { alertEmptyField() }
-        } else {
-            print("Print All")
+        if let name = nameTextField.text,
+            let type = typeTextField.text,
+            let address = addressTextField.text,
+            let phone = phoneTextField.text,
+            let description = descriptionTextView.text {
+            if name.isEmpty || type.isEmpty || address.isEmpty || phone.isEmpty || description.isEmpty {
+                alertEmptyField()
+                
+            } else {
+                print("Name: \(name)")
+                print("Type: \(address)")
+                print("Location: \(address)")
+                print("Phone: \(phone)")
+                print("Description: \(description)")
+                dismiss(animated: true, completion: nil)
+            }
         }
+        
+        
+        
+
         
         
         
