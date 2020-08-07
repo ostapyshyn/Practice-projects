@@ -25,7 +25,22 @@ class ViewController: UIViewController {
         view.addSubview(displaySecondButton)
         
         
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "brand")
+        imageView.image = image
+        navigationItem.titleView = imageView
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(performAdd(param:)))
+        
+        let mySwitch = UISwitch()
+        mySwitch.isOn = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mySwitch)
+        
+    }
+    
+    @objc func performAdd(param: UIBarButtonItem) {
+        print("Add Click")
     }
     
     @objc func displaySecondVC(sender: Any) {
