@@ -10,7 +10,8 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var restaurant = Restaurant()
+    var restaurant: RestaurantMO!
+    //var restaurant = Restaurant()
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RestaurantDetailHeaderView!
     
@@ -34,7 +35,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Configure header view
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
-        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        
+        if let restaurantImage = restaurant.image { headerView.headerImageView.image = UIImage(data: restaurantImage as Data)
+        }
+        
         headerView.heartImageView.isHidden = (restaurant.isVisited) ? false : true
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -99,7 +103,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailMapCell.self), for: indexPath) as! RestaurantDetailMapCell
-            cell.configure(location: restaurant.location)
+            
+            if let restaurantLocation = restaurant.location {
+                cell.configure(location: restaurantLocation)
+            }
+            
             cell.selectionStyle = .none
             return cell
         default:
