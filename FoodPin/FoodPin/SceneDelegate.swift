@@ -2,8 +2,8 @@
 //  SceneDelegate.swift
 //  FoodPin
 //
-//  Created by Volodymyr Ostapyshyn on 05.07.2020.
-//  Copyright © 2020 Volodymyr Ostapyshyn. All rights reserved.
+//  Created by Simon Ng on 28/10/2019.
+//  Copyright © 2019 AppCoda. All rights reserved.
 //
 
 import UIKit

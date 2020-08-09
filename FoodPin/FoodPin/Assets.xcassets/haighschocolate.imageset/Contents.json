@@ -1,23 +1,23 @@
 {
   "images" : [
     {
-      "filename" : "haighschocolate.jpg",
       "idiom" : "universal",
+      "filename" : "haighschocolate.jpg",
       "scale" : "1x"
     },
     {
-      "filename" : "haighschocolate@2x.jpg",
       "idiom" : "universal",
+      "filename" : "haighschocolate@2x.jpg",
       "scale" : "2x"
     },
     {
-      "filename" : "haighschocolate@3x.jpg",
       "idiom" : "universal",
+      "filename" : "haighschocolate@3x.jpg",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }

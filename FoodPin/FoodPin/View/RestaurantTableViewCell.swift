@@ -2,19 +2,19 @@
 //  RestaurantTableViewCell.swift
 //  FoodPin
 //
-//  Created by Volodymyr Ostapyshyn on 06.07.2020.
-//  Copyright © 2020 Volodymyr Ostapyshyn. All rights reserved.
+//  Created by Simon Ng on 28/10/2019.
+//  Copyright © 2019 AppCoda. All rights reserved.
 //
 
 import UIKit
 
 class RestaurantTableViewCell: UITableViewCell {
-    
+
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var thumbnailImageView: UIImageView!
-    @IBOutlet var checkMarkImage: UIImageView!
+    @IBOutlet var heartImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
