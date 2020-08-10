@@ -7,8 +7,10 @@
 //
 
 import UIKit
-
+import CoreData
 class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    var restaurant: RestaurantMO!
+    
     
     @IBOutlet var nameTextField: RoundedTextField! {
         didSet {
@@ -17,28 +19,28 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             nameTextField.delegate = self
         }
     }
-
+    
     @IBOutlet var typeTextField: RoundedTextField! {
         didSet {
             typeTextField.tag = 2
             typeTextField.delegate = self
         }
     }
-
+    
     @IBOutlet var addressTextField: RoundedTextField! {
         didSet {
             addressTextField.tag = 3
             addressTextField.delegate = self
         }
     }
-
+    
     @IBOutlet var phoneTextField: RoundedTextField! {
         didSet {
             phoneTextField.tag = 4
             phoneTextField.delegate = self
         }
     }
-
+    
     @IBOutlet var descriptionTextView: UITextView! {
         didSet {
             descriptionTextView.tag = 5
@@ -46,12 +48,12 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             descriptionTextView.layer.masksToBounds = true
         }
     }
-
+    
     @IBOutlet var photoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Configure navigation bar appearance
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -64,7 +66,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
     }
     
     // MARK: - UITextFieldDelegate methods
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let nextTextField = view.viewWithTag(textField.tag + 1) {
             textField.resignFirstResponder()
@@ -118,7 +120,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             
         }
     }
-
+    
     // MARK: - UIImagePickerControllerDelegate methods
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -131,7 +133,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         
         let leadingConstraint = NSLayoutConstraint(item: photoImageView as Any, attribute: .leading, relatedBy: .equal, toItem: photoImageView.superview, attribute: .leading, multiplier: 1, constant: 0)
         leadingConstraint.isActive = true
-
+        
         let trailingConstraint = NSLayoutConstraint(item: photoImageView as Any, attribute: .trailing, relatedBy: .equal, toItem: photoImageView.superview, attribute: .trailing, multiplier: 1, constant: 0)
         trailingConstraint.isActive = true
         
@@ -162,6 +164,26 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         print("Location: \(addressTextField.text ?? "")")
         print("Phone: \(phoneTextField.text ?? "")")
         print("Description: \(descriptionTextView.text ?? "")")
+        
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) { restaurant = RestaurantMO(context: appDelegate.persistentContainer.viewContext)
+            restaurant.name = nameTextField.text
+            restaurant.type = typeTextField.text
+            restaurant.location = addressTextField.text
+            restaurant.phone = phoneTextField.text
+            restaurant.summary = descriptionTextView.text
+            restaurant.isVisited = false
+            
+            
+            
+            if let restaurantImage = photoImageView.image {
+                restaurant.image = restaurantImage.pngData()
+            }
+            
+            print("Saving data to context ...")
+            appDelegate.saveContext()
+            
+        }
         
         dismiss(animated: true, completion: nil)
     }

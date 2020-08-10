@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
-class RestaurantTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet var emptyRestaurantView: UIView!
     var restaurants: [RestaurantMO] = []
-
+    var fetchResultController: NSFetchedResultsController<RestaurantMO>!
+    
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
@@ -31,9 +33,29 @@ class RestaurantTableViewController: UITableViewController {
             navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0), NSAttributedString.Key.font: customFont ]
         }
         
+        // Fetch data from data store
+        let fetchRequest: NSFetchRequest<RestaurantMO> = RestaurantMO.fetchRequest ()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            
+            do {
+                try fetchResultController.performFetch()
+                if let fetchedObjects = fetchResultController.fetchedObjects {
+                    restaurants = fetchedObjects }
+            } catch {
+                print(error)
+            }
+        }
+        
+        
         navigationController?.hidesBarsOnSwipe = true
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -41,22 +63,55 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         if restaurants.count > 0 {
-        tableView.backgroundView?.isHidden = true
-        tableView.separatorStyle = .singleLine
+            tableView.backgroundView?.isHidden = true
+            tableView.separatorStyle = .singleLine
             
         } else {
-        tableView.backgroundView?.isHidden = false
-        tableView.separatorStyle = .none }
+            tableView.backgroundView?.isHidden = false
+            tableView.separatorStyle = .none }
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurants.count
     }
-
+    
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+        
+    }
+    
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            } default:
+                tableView.reloadData()
+            
+        }
+        if let fetchedObjects = controller.fetchedObjects {
+            restaurants = fetchedObjects as! [RestaurantMO]
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+        
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -78,12 +133,13 @@ class RestaurantTableViewController: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-            // Delete the row from the data source
-            self.restaurants.remove(at: indexPath.row)
-            
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete" ) { (action, sourceView, completionHandler) in
+            // Delete the row from the data store
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                let context = appDelegate.persistentContainer.viewContext
+                let restaurantToDelete = self.fetchResultController.object(at: indexPath)
+                context.delete(restaurantToDelete)
+                appDelegate.saveContext() }
             // Call completion handler with true to indicate
             completionHandler(true)
         }
@@ -115,7 +171,7 @@ class RestaurantTableViewController: UITableViewController {
         // Customize the color
         deleteAction.backgroundColor = UIColor(red: 231, green: 76, blue: 60)
         deleteAction.image = UIImage(systemName: "trash")
-
+        
         shareAction.backgroundColor = UIColor(red: 254, green: 149, blue: 38)
         shareAction.image = UIImage(systemName: "square.and.arrow.up")
         
@@ -145,7 +201,7 @@ class RestaurantTableViewController: UITableViewController {
         return swipeConfiguration
     }
     
-
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -156,7 +212,7 @@ class RestaurantTableViewController: UITableViewController {
             }
         }
     }
-
+    
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
     }
