@@ -33,7 +33,12 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.backgroundView?.isHidden = true
         
         searchController = UISearchController(searchResultsController: nil)
-        self.navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        
+        //self.navigationItem.searchController = searchController
+        tableView.tableHeaderView = searchController.searchBar
         
         tableView.cellLayoutMarginsFollowReadableWidth = true
         
@@ -66,6 +71,10 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             }
         }
         
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.barTintColor = .white
+        searchController.searchBar.backgroundImage = UIImage()
+        searchController.searchBar.tintColor = UIColor(red: 231, green: 76, blue: 60)
         
         navigationController?.hidesBarsOnSwipe = true
     }
@@ -74,6 +83,14 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         super.viewWillAppear(animated)
         
         navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if searchController.isActive {
+            return false
+        } else {
+            return true
+        }
     }
     
     // MARK: - Table view data source
@@ -106,8 +123,10 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     func filterContent(for searchText: String) {
         searchResults = restaurants.filter({ (restaurant) -> Bool in
-            if let name = restaurant.name{
-                let isMatch = name.localizedCaseInsensitiveContains(searchText)
+            if let name = restaurant.name,
+                let location = restaurant.location {
+                
+                let isMatch = name.localizedCaseInsensitiveContains(searchText) || location.localizedCaseInsensitiveContains(searchText)
                 return isMatch
             }
             
@@ -148,14 +167,18 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         let cellIdentifier = "datacell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
         
+        // Determine if we get the restaurant from search result or the original array
+        let restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        
         // Configure the cell...
-        cell.nameLabel.text = restaurants[indexPath.row].name
-        if let restaurantImage = restaurants[indexPath.row].image {
+        cell.nameLabel.text = restaurant.name
+        
+        if let restaurantImage = restaurant.image {
             cell.thumbnailImageView.image = UIImage(data: restaurantImage as Data)
         }
-        cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.typeLabel.text = restaurants[indexPath.row].type
-        cell.heartImageView.isHidden = restaurants[indexPath.row].isVisited ? false : true
+        cell.locationLabel.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
+        cell.heartImageView.isHidden = restaurant.isVisited ? false : true
         
         return cell
     }
@@ -238,7 +261,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
-                destinationController.restaurant = restaurants[indexPath.row]
+                destinationController.restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+                
             }
         }
     }

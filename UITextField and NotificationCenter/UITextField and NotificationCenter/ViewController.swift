@@ -15,8 +15,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        myTextField.delegate = self
+        
         let textFieldFrame = CGRect(x: 0, y: 0, width: 200, height: 31)
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { (nc) in
+            self.view.frame.origin.y = -200
+        }
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { (nc) in
+            self.view.frame.origin.y = 0
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldTextDidChange(_:)) , name:UITextField.textDidChangeNotification, object: nil)
+
+
         
         myTextField = UITextField(frame: textFieldFrame)
         myTextField.borderStyle = .roundedRect
@@ -24,12 +35,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         myTextField.textAlignment = .center
         myTextField.placeholder = "I am an iOS Developer"
         myTextField.center = view.center
-        myTextField.becomeFirstResponder() // blink cursor in
+        //myTextField.becomeFirstResponder() // blink cursor in
         view.addSubview(myTextField)
+        myTextField.delegate = self // вкінці
         
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("begin")
         return true // can edit
     }
     
@@ -58,12 +71,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("take off keyboard")
+        //print("take off keyboard")
+        myTextField.resignFirstResponder()
         if textField == myTextField {
             textField.resignFirstResponder()
         }
         
         return true
+    }
+    
+    @objc func textFieldTextDidChange(_ param: NSNotification) {
+        print("change \(param)")
     }
 
 }
