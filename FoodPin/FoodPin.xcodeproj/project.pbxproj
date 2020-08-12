@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B74910B24E472A100892CB6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B74910A24E472A100892CB6 /* Onboarding.storyboard */; };
 		F4201CD52368091E003C09DB /* RestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4201CD42368091E003C09DB /* RestaurantDetailIconTextCell.swift */; };
 		F4201CD723680B91003C09DB /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4201CD623680B91003C09DB /* RestaurantDetailTextCell.swift */; };
 		F4201CDA23683BEB003C09DB /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4201CD923683BEB003C09DB /* UIColor+Ext.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B74910A24E472A100892CB6 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		F4201CD42368091E003C09DB /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		F4201CD623680B91003C09DB /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
 		F4201CD923683BEB003C09DB /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				F4C3332F2365F91600D3A311 /* Main.storyboard */,
 				F4C333342365F91800D3A311 /* LaunchScreen.storyboard */,
+				0B74910A24E472A100892CB6 /* Onboarding.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				F4C3335B236736E300D3A311 /* Rubik-Light.ttf in Resources */,
 				F4C3335D236736E300D3A311 /* Rubik-LightItalic.ttf in Resources */,
 				F4C3335E236736E300D3A311 /* Rubik-Regular.ttf in Resources */,
+				0B74910B24E472A100892CB6 /* Onboarding.storyboard in Resources */,
 				F4C3335A236736E300D3A311 /* Rubik-BoldItalic.ttf in Resources */,
 				F4C33355236736E300D3A311 /* Rubik-Medium.ttf in Resources */,
 			);
