@@ -51,7 +51,11 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Set the data source to itself
+        dataSource = self
+        // Create the first walkthrough screen
+        if let startingViewController = contentViewController(at: 0) { setViewControllers([startingViewController], direction: .forward,animated: true, completion: nil)
+        }
     }
     
 

@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="-357.97101449275362" y="-177.45535714285714"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Walkthrough Page View Controller-->
         <scene sceneID="TYc-rh-rLt">
             <objects>
-                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="l6r-wN-FwI" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="WalkthroughPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="l6r-wN-FwI" customClass="WalkthroughPageViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <size key="freeformSize" width="414" height="624"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5R-5d-Tgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
