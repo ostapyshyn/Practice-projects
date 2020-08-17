@@ -8,13 +8,26 @@
 
 import UIKit
 
+protocol WalkthroughPageViewControllerDelegate: class {
+    func didUpdatePageIndex(currentIndex: Int)
+}
+
 class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerDataSource {
+    
+    weak var walkthroughDelegate: WalkthroughPageViewControllerDelegate?
     
     var pageHeadings = ["CREATE YOUR OWN FOOD GUIDE", "SHOW YOU THE LOCATION", "DISCOVER GREAT RESTAURANTS"]
     var pageImages = ["onboarding-1", "onboarding-2", "onboarding-3"]
     var pageSubHeadings = ["Pin your favorite restaurants and create your own food guide",
     "Search and locate your favourite restaurant on Maps", "Find restaurants shared by your friends and other foodies"]
     var currentIndex = 0
+    
+    func forwardPage() {
+        currentIndex += 1
+        if let nextViewController = contentViewController(at: currentIndex) {
+            setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+        }
+    }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! WalkthroughContentViewController).index
