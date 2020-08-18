@@ -12,7 +12,7 @@ protocol WalkthroughPageViewControllerDelegate: class {
     func didUpdatePageIndex(currentIndex: Int)
 }
 
-class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     weak var walkthroughDelegate: WalkthroughPageViewControllerDelegate?
     
@@ -26,6 +26,15 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         currentIndex += 1
         if let nextViewController = contentViewController(at: currentIndex) {
             setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            if let contentViewController = pageViewController.viewControllers?
+                .first as? WalkthroughContentViewController { currentIndex = contentViewController.index
+                walkthroughDelegate?.didUpdatePageIndex(currentIndex: contentViewController.index)
+            }
         }
     }
     
@@ -63,7 +72,7 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        delegate = self
         // Set the data source to itself
         dataSource = self
         // Create the first walkthrough screen

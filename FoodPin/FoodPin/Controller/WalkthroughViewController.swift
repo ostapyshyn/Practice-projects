@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WalkthroughViewController: UIViewController {
+class WalkthroughViewController: UIViewController, WalkthroughPageViewControllerDelegate {
     
     var walkthroughPageViewController: WalkthroughPageViewController?
     
@@ -36,7 +36,8 @@ class WalkthroughViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination
         if let pageViewController = destination as? WalkthroughPageViewController {
-            walkthroughPageViewController = pageViewController
+        walkthroughPageViewController = pageViewController
+        walkthroughPageViewController?.walkthroughDelegate = self
             
         }
     }
@@ -66,6 +67,10 @@ class WalkthroughViewController: UIViewController {
             default: break
             }
             pageControl.currentPage = index }
+    }
+    
+    func didUpdatePageIndex(currentIndex: Int) {
+        updateUI()
     }
     
 

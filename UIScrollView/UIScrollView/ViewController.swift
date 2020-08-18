@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let image = UIImage(named: imageName)
         
         imageViewRect.origin.x = imageViewRect.size.width * CGFloat(myScrollView.subviews.count)
-        
+        // Swift 4 c нуля: UIKit урок 17 - UIScrollView & Bonus
         let imageView = newImageViewWithImage(paramImage: image!, paramFrame: imageViewRect)
         
         myScrollView.addSubview(imageView)
