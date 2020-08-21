@@ -13,6 +13,7 @@
 		0B9A450724E6D22800DC2BB4 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A450624E6D22800DC2BB4 /* WalkthroughPageViewController.swift */; };
 		0BBA409124EE9AC300670190 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BBA408F24EE9AC300670190 /* About.storyboard */; };
 		0BBA409324EE9B2D00670190 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BBA409224EE9B2D00670190 /* Discover.storyboard */; };
+		0BC1C76B24EFBF42008FFF19 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1C76A24EFBF42008FFF19 /* AboutTableViewController.swift */; };
 		F4201CD52368091E003C09DB /* RestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4201CD42368091E003C09DB /* RestaurantDetailIconTextCell.swift */; };
 		F4201CD723680B91003C09DB /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4201CD623680B91003C09DB /* RestaurantDetailTextCell.swift */; };
 		F4201CDA23683BEB003C09DB /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4201CD923683BEB003C09DB /* UIColor+Ext.swift */; };
@@ -54,6 +55,7 @@
 		0B9A450624E6D22800DC2BB4 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		0BBA409024EE9AC300670190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPin/Storyboard/Base.lproj/About.storyboard; sourceTree = "<group>"; };
 		0BBA409224EE9B2D00670190 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		0BC1C76A24EFBF42008FFF19 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		F4201CD42368091E003C09DB /* RestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailIconTextCell.swift; sourceTree = "<group>"; };
 		F4201CD623680B91003C09DB /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
 		F4201CD923683BEB003C09DB /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				0B9A450424E6CD5700DC2BB4 /* WalkthroughContentViewController.swift */,
 				0B9A450624E6D22800DC2BB4 /* WalkthroughPageViewController.swift */,
 				0B2A68EE24E8755000DD5C8E /* WalkthroughViewController.swift */,
+				0BC1C76A24EFBF42008FFF19 /* AboutTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				F4201CDC23683C6C003C09DB /* UINavigationController+Ext.swift in Sources */,
 				F4C33340236603E800D3A311 /* RestaurantTableViewCell.swift in Sources */,
 				0B9A450724E6D22800DC2BB4 /* WalkthroughPageViewController.swift in Sources */,
+				0BC1C76B24EFBF42008FFF19 /* AboutTableViewController.swift in Sources */,
 				F467C9432374115800ECD979 /* NewRestaurantController.swift in Sources */,
 				F467C93F2372AAAF00ECD979 /* ReviewViewController.swift in Sources */,
 				F4201CD723680B91003C09DB /* RestaurantDetailTextCell.swift in Sources */,
