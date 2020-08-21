@@ -21,10 +21,23 @@ class ViewController: UIViewController {
         
         createProgress(myProgressView)
         createButton(myButton)
+        createTimer()
     }
     
     func createTimer() {
-        myTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: <#T##Selector#>, userInfo: nil, repeats: true)
+        myTime = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgressView), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateProgressView() {
+        if myProgressView.progress != 1.0 {
+            myProgressView.progress += 0.1 / 1.0
+        } else if myProgressView.progress == 1.0 {
+            UIView.animate(withDuration: 0.7) {
+                self.myButton.alpha = 1
+                self.myButton.setTitle("Start", for: .normal)
+                self.myTime.invalidate()
+            }
+        }
     }
 
     func createProgress(_ progressView: UIProgressView) {
@@ -36,10 +49,12 @@ class ViewController: UIViewController {
         progressView.center = view.center
         view.addSubview(progressView)
     }
+
     
     func createButton(_ button: UIButton) {
         button.frame = CGRect(x: view.bounds.size.width / 4, y: view.center.y + 100, width: 150, height: 50)
         button.setTitle("загрузка...", for: .normal)
+        button.alpha = 0.2
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .red
         view.addSubview(button)
