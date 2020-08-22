@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B2A68EF24E8755000DD5C8E /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A68EE24E8755000DD5C8E /* WalkthroughViewController.swift */; };
 		0B74910B24E472A100892CB6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B74910A24E472A100892CB6 /* Onboarding.storyboard */; };
+		0B77C58824F10E5E00244639 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77C58724F10E5E00244639 /* WebViewController.swift */; };
 		0B9A450524E6CD5700DC2BB4 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A450424E6CD5700DC2BB4 /* WalkthroughContentViewController.swift */; };
 		0B9A450724E6D22800DC2BB4 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A450624E6D22800DC2BB4 /* WalkthroughPageViewController.swift */; };
 		0BBA409124EE9AC300670190 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BBA408F24EE9AC300670190 /* About.storyboard */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		0B2A68EE24E8755000DD5C8E /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		0B74910A24E472A100892CB6 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		0B77C58724F10E5E00244639 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		0B9A450424E6CD5700DC2BB4 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		0B9A450624E6D22800DC2BB4 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		0BBA409024EE9AC300670190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPin/Storyboard/Base.lproj/About.storyboard; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				0B9A450624E6D22800DC2BB4 /* WalkthroughPageViewController.swift */,
 				0B2A68EE24E8755000DD5C8E /* WalkthroughViewController.swift */,
 				0BC1C76A24EFBF42008FFF19 /* AboutTableViewController.swift */,
+				0B77C58724F10E5E00244639 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				F43DB3522368A57A001AE30F /* RestaurantDetailSeparatorCell.swift in Sources */,
 				F43DB3542368A650001AE30F /* RestaurantDetailMapCell.swift in Sources */,
 				F4C333422366DE1100D3A311 /* RestaurantDetailViewController.swift in Sources */,
+				0B77C58824F10E5E00244639 /* WebViewController.swift in Sources */,
 				0B9A450524E6CD5700DC2BB4 /* WalkthroughContentViewController.swift in Sources */,
 				F467C9412374108500ECD979 /* RoundedTextField.swift in Sources */,
 				0B2A68EF24E8755000DD5C8E /* WalkthroughViewController.swift in Sources */,
