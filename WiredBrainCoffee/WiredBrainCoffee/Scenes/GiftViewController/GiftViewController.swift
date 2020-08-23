@@ -37,16 +37,22 @@ extension GiftViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let rows: CGFloat = 2
-        let collectionViewHeight = collectionView.bounds.height
+        let columns: CGFloat = 2
+        let collectionViewWidth = collectionView.bounds.width
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (rows - 1)
-        let adjustedHeight = collectionViewHeight - spaceBetweenCells
+        let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columns - 1)
+        let adjustedWidth = collectionViewWidth - spaceBetweenCells
         
-        let width: CGFloat = 100
-        let height: CGFloat = floor(adjustedHeight / rows)
+        let width: CGFloat = floor(adjustedWidth / columns)
+        let height: CGFloat = 100
         
         return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "sectionHeader", for: indexPath) as! HeaderCollectionReusableView
+        view.setup(count: colorData.count)
+        return view
     }
     
     
