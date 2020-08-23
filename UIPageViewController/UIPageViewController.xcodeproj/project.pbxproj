@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B77C58A24F13E5400244639 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77C58924F13E5400244639 /* MyViewController.swift */; };
+		0B77C58C24F1406800244639 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77C58B24F1406800244639 /* CarViewController.swift */; };
+		0B77C58E24F1629C00244639 /* CarsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77C58D24F1629C00244639 /* CarsHelper.swift */; };
 		0BC1C77A24EFF6CD008FFF19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1C77924EFF6CD008FFF19 /* AppDelegate.swift */; };
 		0BC1C77C24EFF6CD008FFF19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1C77B24EFF6CD008FFF19 /* SceneDelegate.swift */; };
 		0BC1C77E24EFF6CD008FFF19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1C77D24EFF6CD008FFF19 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B77C58924F13E5400244639 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		0B77C58B24F1406800244639 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
+		0B77C58D24F1629C00244639 /* CarsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsHelper.swift; sourceTree = "<group>"; };
 		0BC1C77624EFF6CD008FFF19 /* UIPageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIPageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC1C77924EFF6CD008FFF19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BC1C77B24EFF6CD008FFF19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +62,11 @@
 		0BC1C77824EFF6CD008FFF19 /* UIPageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0B77C58D24F1629C00244639 /* CarsHelper.swift */,
 				0BC1C77924EFF6CD008FFF19 /* AppDelegate.swift */,
 				0BC1C77B24EFF6CD008FFF19 /* SceneDelegate.swift */,
+				0B77C58924F13E5400244639 /* MyViewController.swift */,
+				0B77C58B24F1406800244639 /* CarViewController.swift */,
 				0BC1C77D24EFF6CD008FFF19 /* ViewController.swift */,
 				0BC1C77F24EFF6CD008FFF19 /* Main.storyboard */,
 				0BC1C78224EFF6D1008FFF19 /* Assets.xcassets */,
@@ -138,8 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B77C58C24F1406800244639 /* CarViewController.swift in Sources */,
 				0BC1C77E24EFF6CD008FFF19 /* ViewController.swift in Sources */,
 				0BC1C77A24EFF6CD008FFF19 /* AppDelegate.swift in Sources */,
+				0B77C58A24F13E5400244639 /* MyViewController.swift in Sources */,
+				0B77C58E24F1629C00244639 /* CarsHelper.swift in Sources */,
 				0BC1C77C24EFF6CD008FFF19 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

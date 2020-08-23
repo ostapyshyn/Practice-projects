@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class AboutTableViewController: UITableViewController {
     
@@ -15,9 +16,9 @@ class AboutTableViewController: UITableViewController {
     var sectionContent = [[
     (image: "store", text: "Rate us on App Store", link : "https://www.apple.com/ios/app-store/"),
     (image: "chat", text: "Tell us your feedback", link : "http://www.appcoda.com/contact")],
-    [(image: "twitter", text: "Twitter", link: "https:// twitter.com/appcodamobile"),
-    (image: "facebook", text: "Facebook", link: "https: //facebook.com/appcodamobile"),
-    (image: "instagram", text: "Instagram", link: "http s://www.instagram.com/appcodadotcom")
+    [(image: "twitter", text: "Twitter", link: "https://twitter.com/appcodamobile"),
+    (image: "facebook", text: "Facebook", link: "https://facebook.com/appcodamobile"),
+    (image: "instagram", text: "Instagram", link: "https://www.instagram.com/appcodadotcom")
         ]]
     
 
@@ -73,6 +74,13 @@ class AboutTableViewController: UITableViewController {
             } else if indexPath.row == 1 {
                 performSegue(withIdentifier: "showWebView", sender: self)
             }
+        case 1:
+            if let url = URL(string: link) {
+                
+                let safariController = SFSafariViewController(url: url)
+                present(safariController, animated: true, completion: nil)
+            }
+            
         default:
             break
         }
