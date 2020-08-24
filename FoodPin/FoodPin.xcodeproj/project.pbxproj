@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B2A68EF24E8755000DD5C8E /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A68EE24E8755000DD5C8E /* WalkthroughViewController.swift */; };
+		0B70FCF024F380540067B801 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B70FCEF24F380540067B801 /* CloudKit.framework */; };
+		0B70FCF224F384940067B801 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B70FCF124F384940067B801 /* DiscoverTableViewController.swift */; };
 		0B74910B24E472A100892CB6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B74910A24E472A100892CB6 /* Onboarding.storyboard */; };
 		0B77C58824F10E5E00244639 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77C58724F10E5E00244639 /* WebViewController.swift */; };
 		0B9A450524E6CD5700DC2BB4 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9A450424E6CD5700DC2BB4 /* WalkthroughContentViewController.swift */; };
@@ -51,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		0B2A68EE24E8755000DD5C8E /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		0B70FCEE24F37EAB0067B801 /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
+		0B70FCEF24F380540067B801 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		0B70FCF124F384940067B801 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		0B74910A24E472A100892CB6 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		0B77C58724F10E5E00244639 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		0B9A450424E6CD5700DC2BB4 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43DB3502368826C001AE30F /* MapKit.framework in Frameworks */,
+				0B70FCF024F380540067B801 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +124,7 @@
 		F43DB34E2368826C001AE30F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B70FCEF24F380540067B801 /* CloudKit.framework */,
 				F43DB34F2368826C001AE30F /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -143,6 +150,7 @@
 		F4C333282365F91600D3A311 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				0B70FCEE24F37EAB0067B801 /* FoodPin.entitlements */,
 				F4201CD823683BD3003C09DB /* Extensions */,
 				F4C33349236736A400D3A311 /* Resources */,
 				F4C333482366F24400D3A311 /* Storyboard */,
@@ -171,6 +179,7 @@
 				0B2A68EE24E8755000DD5C8E /* WalkthroughViewController.swift */,
 				0BC1C76A24EFBF42008FFF19 /* AboutTableViewController.swift */,
 				0B77C58724F10E5E00244639 /* WebViewController.swift */,
+				0B70FCF124F384940067B801 /* DiscoverTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -340,6 +349,7 @@
 				F4C3332C2365F91600D3A311 /* SceneDelegate.swift in Sources */,
 				F4C3333E2365FAF100D3A311 /* RestaurantTableViewController.swift in Sources */,
 				F43DB3562368A9CE001AE30F /* MapViewController.swift in Sources */,
+				0B70FCF224F384940067B801 /* DiscoverTableViewController.swift in Sources */,
 				F467C969237504C600ECD979 /* FoodPin.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,8 +502,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 44X6M65T9Y;
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FoodPin/Info.plist;
