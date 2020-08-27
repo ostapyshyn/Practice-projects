@@ -10,12 +10,20 @@ import UIKit
 import CloudKit
 
 class DiscoverTableViewController: UITableViewController {
-
+    
+    private var imageCache = NSCache<CKRecord.ID, NSURL>()
     var restaurants: [CKRecord] = []
     var spinner = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Pull To Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor.white
+        refreshControl?.tintColor = UIColor.gray
+        refreshControl?.addTarget(self, action: #selector(fetchRecordsFromCloud),
+                                  for: UIControl.Event.valueChanged)
         
         spinner.style = .medium
         spinner.hidesWhenStopped = true
@@ -25,7 +33,7 @@ class DiscoverTableViewController: UITableViewController {
         spinner.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([ spinner.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant:150.0),
-                                      spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
         
         
         // Activate the spinner
@@ -44,7 +52,7 @@ class DiscoverTableViewController: UITableViewController {
         fetchRecordsFromCloud()
     }
     
-    func fetchRecordsFromCloud() {
+    @objc func fetchRecordsFromCloud() {
         // Fetch data using Convenience API
         let cloudContainer = CKContainer.default()
         let publicDatabase = cloudContainer.publicCloudDatabase
@@ -83,6 +91,9 @@ class DiscoverTableViewController: UITableViewController {
         // Configure the cell...
         let restaurant = restaurants[indexPath.row]
         cell.textLabel?.text = restaurant.object(forKey: "name") as? String
+        
+        // Set the default image
+        cell.imageView?.image = UIImage(named: "photo")
         
         if let image = restaurant.object(forKey: "image"), let imageAsset = image as? CKAsset {
             
