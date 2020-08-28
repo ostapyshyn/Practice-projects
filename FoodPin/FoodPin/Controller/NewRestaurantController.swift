@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import CloudKit
+
 class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var restaurant: RestaurantMO!
     
@@ -186,5 +188,15 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         }
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    func saveRecordToCloud(restaurant: RestaurantMO!) -> Void {
+        // Prepare the record to save
+        let record = CKRecord(recordType: "Restaurant")
+        record.setValue(restaurant.name, forKey: "name")
+        record.setValue(restaurant.type, forKey: "type")
+        record.setValue(restaurant.location, forKey: "location")
+        record.setValue(restaurant.phone, forKey: "phone")
+        record.setValue(restaurant.summary, forKey: "description")
     }
 }
