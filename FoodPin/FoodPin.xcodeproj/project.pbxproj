@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B2A68EF24E8755000DD5C8E /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A68EE24E8755000DD5C8E /* WalkthroughViewController.swift */; };
+		0B55752E24FACA7300F6F2BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B55752C24FACA7300F6F2BD /* Localizable.strings */; };
 		0B70FCF024F380540067B801 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B70FCEF24F380540067B801 /* CloudKit.framework */; };
 		0B70FCF224F384940067B801 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B70FCF124F384940067B801 /* DiscoverTableViewController.swift */; };
 		0B74910B24E472A100892CB6 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B74910A24E472A100892CB6 /* Onboarding.storyboard */; };
@@ -53,6 +54,10 @@
 
 /* Begin PBXFileReference section */
 		0B2A68EE24E8755000DD5C8E /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		0B55752924FAABB700F6F2BD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = FoodPin/Storyboard/uk.lproj/About.strings; sourceTree = "<group>"; };
+		0B55752A24FAABB800F6F2BD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		0B55752B24FAABB800F6F2BD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0B55752D24FACA7300F6F2BD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B70FCEE24F37EAB0067B801 /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
 		0B70FCEF24F380540067B801 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		0B70FCF124F384940067B801 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 				F4C3332B2365F91600D3A311 /* SceneDelegate.swift */,
 				F4C333322365F91800D3A311 /* Assets.xcassets */,
 				F4C333372365F91800D3A311 /* Info.plist */,
+				0B55752C24FACA7300F6F2BD /* Localizable.strings */,
 				F467C967237504C600ECD979 /* FoodPin.xcdatamodeld */,
 			);
 			path = FoodPin;
@@ -285,6 +291,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = F4C3331D2365F91600D3A311;
 			productRefGroup = F4C333272365F91600D3A311 /* Products */;
@@ -301,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B55752E24FACA7300F6F2BD /* Localizable.strings in Resources */,
 				F4C3335C236736E300D3A311 /* Rubik-Bold.ttf in Resources */,
 				F4C33356236736E300D3A311 /* Rubik-BlackItalic.ttf in Resources */,
 				F4C333362365F91800D3A311 /* LaunchScreen.storyboard in Resources */,
@@ -357,10 +365,19 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0B55752C24FACA7300F6F2BD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B55752D24FACA7300F6F2BD /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0BBA408F24EE9AC300670190 /* About.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0BBA409024EE9AC300670190 /* Base */,
+				0B55752924FAABB700F6F2BD /* uk */,
 			);
 			name = About.storyboard;
 			sourceTree = "<group>";
@@ -369,6 +386,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4C333302365F91600D3A311 /* Base */,
+				0B55752A24FAABB800F6F2BD /* uk */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -377,6 +395,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4C333352365F91800D3A311 /* Base */,
+				0B55752B24FAABB800F6F2BD /* uk */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -388,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -448,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

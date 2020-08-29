@@ -11,14 +11,15 @@ import SafariServices
 
 class AboutTableViewController: UITableViewController {
     
-    var sectionTitles = ["Feedback", "Follow Us"]
+    var sectionTitles = [NSLocalizedString("Feedback", comment: "Feedback"),
+                         NSLocalizedString("Follow Us", comment: "Follow Us")]
     
     var sectionContent = [[
-    (image: "store", text: "Rate us on App Store", link : "https://www.apple.com/ios/app-store/"),
-    (image: "chat", text: "Tell us your feedback", link : "http://www.appcoda.com/contact")],
-    [(image: "twitter", text: "Twitter", link: "https://twitter.com/appcodamobile"),
-    (image: "facebook", text: "Facebook", link: "https://facebook.com/appcodamobile"),
-    (image: "instagram", text: "Instagram", link: "https://www.instagram.com/appcodadotcom")
+    (image: "store", text: NSLocalizedString("Rate us on App Store", comment: "Rate us on App Store"), link: "https://www.apple.com/ios/app-store/"),
+    (image: "chat", text: NSLocalizedString("Tell us your feedback", comment: "Tell us your feedback"), link: "http://www.appcoda.com/contact")],
+    [(image: "twitter", text: NSLocalizedString("Twitter" , comment: "Twitter"), link: "https://twitter.com/appcodamobile"),
+    (image: "facebook", text: NSLocalizedString("Facebook", comment: "Facebook"), link: "https://facebook.com/appcodamobile"),
+    (image: "instagram", text: NSLocalizedString("Instagram", comment: "Instagram"), link: "https://www.instagram.com/appcodadotcom")
         ]]
     
 
