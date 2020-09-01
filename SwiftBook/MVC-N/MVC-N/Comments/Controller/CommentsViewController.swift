@@ -15,10 +15,11 @@ class CommentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+         //navigationItem.leftBarButtonItem = editButtonItem
     }
 
-
+   
+    
 }
 
 extension CommentsViewController: UITableViewDelegate {
@@ -27,12 +28,19 @@ extension CommentsViewController: UITableViewDelegate {
 
 extension CommentsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print("1")
+    }
+    
+    
     
     
 }
