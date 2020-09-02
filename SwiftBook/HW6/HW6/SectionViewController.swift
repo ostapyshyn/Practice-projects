@@ -1,85 +1,75 @@
 //
-//  MainViewController.swift
+//  SectionViewController.swift
 //  HW6
 //
-//  Created by Volodymyr Ostapyshyn on 01.09.2020.
+//  Created by Volodymyr Ostapyshyn on 02.09.2020.
 //  Copyright © 2020 Volodymyr Ostapyshyn. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UITableViewController {
-    
-    
-    
-    
-    
+class SectionViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between
-        // presentations
+        // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the
-        // navigation bar for this view controller.
-        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
-    
-    func getPersons() -> [Person] {
-        var persons: [Person] = []
-            
-        for index in 0...3 {
-            if !names.isEmpty, !surnames.isEmpty, !emails.isEmpty, !phones.isEmpty {
-                let person = Person(name: names[index],
-                surname: surnames[index],
-                email: emails[index],
-                phone: phones[index])
-                
-                persons.append(person)
-            }
-        }
-
-        return persons
-    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView,
-                            numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return names.count
     }
 
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let persons = getPersons()
-        
-        
-        cell.textLabel?.text = persons[indexPath.row].name + " " +
-            persons[indexPath.row].surname
-        cell.textLabel?.numberOfLines = 0
-        
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
 
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var currentTask: String
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        
+        switch indexPath.row {
+        case 0:
+            currentTask = persons[indexPath.section].email
+        case 1:
+            currentTask = persons[indexPath.section].phone
+        
+        default:
+            currentTask = " "
+        }
+
+        cell.textLabel?.text = currentTask //person[indexPath.section][indexPath.row]
+        
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = tableView.indexPathForSelectedRow {
-            let detailVC = segue.destination as! DetailViewController
-            detailVC.name = names[indexPath.row] + " " + surnames[indexPath.row]
-            detailVC.phone = phones[indexPath.row]
-            detailVC.email = emails[indexPath.row]
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return names[section] + " " + surnames[section]
+        case 1:
+            return names[section] + " " + surnames[section]
+        case 2:
+            return names[section] + " " + surnames[section]
+        case 3:
+            return names[section] + " " + surnames[section]
+        default:
+            return nil
         }
     }
+    
+    
 
     /*
     // Override to support conditional editing of the table view.

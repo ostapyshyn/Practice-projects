@@ -15,7 +15,7 @@ class CommentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         //navigationItem.leftBarButtonItem = editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
    
