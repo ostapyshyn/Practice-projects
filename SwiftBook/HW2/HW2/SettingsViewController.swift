@@ -146,6 +146,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func donePressed() {
         let color = colorView.backgroundColor
         delegate?.setColor(color ?? .red, text: "Hello")
+        print("hi")
         dismiss(animated: true, completion: nil) //
         //print(colorView.backgroundColor!)
     }

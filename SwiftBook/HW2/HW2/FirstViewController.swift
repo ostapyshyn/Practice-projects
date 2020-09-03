@@ -10,24 +10,24 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
-    
+    let color = SettingsViewController()
 
     
-    @IBAction func editPressed(_ sender: UIBarButtonItem) {
-        let selectionVC = storyboard?.instantiateViewController(withIdentifier: "SelectionScreen") as! SettingsViewController
-        selectionVC.delegate = self
-        selectionVC.colorFromMainVC = view.backgroundColor
-        //present(selectionVC, animated: true, completion: nil)
-        
-        //let controller = SettingsViewController()
-        navigationController?.pushViewController(selectionVC, animated: true)
-    }
+//    @IBAction func editPressed(_ sender: UIBarButtonItem) {
+//        let selectionVC = storyboard?.instantiateViewController(withIdentifier: "SelectionScreen") as! SettingsViewController
+//        selectionVC.delegate = self
+//        selectionVC.colorFromMainVC = view.backgroundColor
+//        //present(selectionVC, animated: true, completion: nil)
+//
+//        //let controller = SettingsViewController()
+//        navigationController?.pushViewController(selectionVC, animated: true)
+//    }
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //vc.delegate = self
+        color.delegate = self
         
         
     }
@@ -55,6 +55,7 @@ class FirstViewController: UIViewController {
 extension FirstViewController: ColorDelegate {
     
     func setColor(_ color: UIColor, text: String) {
+        print("test§")
         view.backgroundColor = color
         
         print(text)

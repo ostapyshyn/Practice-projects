@@ -20,7 +20,7 @@
                     <navigationItem key="navigationItem" id="1F8-fW-6so">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="idV-WW-kWg">
                             <connections>
-                                <action selector="editPressed:" destination="g7N-9y-nd5" id="Who-e1-wux"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="A68-mL-kWA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -177,6 +177,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zmF-jK-MHx"/>
                     <connections>
                         <outlet property="blueLabel" destination="Pfc-Qp-mew" id="V0Q-6J-usA"/>
                         <outlet property="blueSlider" destination="FeZ-8x-aUg" id="lga-TP-JZ3"/>
