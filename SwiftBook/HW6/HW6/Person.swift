@@ -19,7 +19,7 @@ struct Person {
     
 }
 
-// add singelton static
+// add singelton static 
 var names = ["John", "Tim", "Andrew", "Oleh"].shuffled()
 var surnames = ["Ruiz", "Djokovic", "Hristov", "Devine"].shuffled()
 var emails = ["one@gmail.com", "two@gmail.com",

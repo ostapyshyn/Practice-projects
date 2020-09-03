@@ -8,8 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+protocol ColorDelegate {
+    func setColor(_ color: UIColor, text: String)
+}
 
+class SettingsViewController: UIViewController, UITextFieldDelegate {
+
+    var delegate: ColorDelegate?
+    
+    var colorFromMainVC: UIColor!
+    
     @IBOutlet var colorView: UIView!
     
     @IBOutlet var redSlider: UISlider!
@@ -33,26 +41,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         configureLabels()
         configureTexFields()
         updateColor()
+        colorView.backgroundColor = colorFromMainVC
         
     }
+    
+    
     
     func configureSliders() {
         
         redSlider.minimumValue = 0
         redSlider.maximumValue = 1
-        redSlider.value = 0.5
+        redSlider.value = 1
         redSlider.minimumTrackTintColor = .red
         redSlider.maximumTrackTintColor = .gray
         
         greenSlider.minimumValue = 0
         greenSlider.maximumValue = 1
-        greenSlider.value = 0.5
+        greenSlider.value = 1
         greenSlider.minimumTrackTintColor = .green
         greenSlider.maximumTrackTintColor = .gray
         
         blueSlider.minimumValue = 0
         blueSlider.maximumValue = 1
-        blueSlider.value = 0.5
+        blueSlider.value = 1
         blueSlider.minimumTrackTintColor = .blue
         blueSlider.maximumTrackTintColor = .gray
         
@@ -131,6 +142,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         blueLabel.text = value
         blueTF.text = value
     }
+    
+    @IBAction func donePressed() {
+        let color = colorView.backgroundColor
+        delegate?.setColor(color ?? .red, text: "Hello")
+        dismiss(animated: true, completion: nil) //
+        //print(colorView.backgroundColor!)
+    }
+    
+     
+    
+    
     
     
     
