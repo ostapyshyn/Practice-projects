@@ -8,11 +8,13 @@
 
 import UIKit
 
-class Settings {
+final class Settings {
     
     static let shared = Settings() //  12
     var colorStyle = UIColor.white
     var volumeLevel: Float = 1.0
+    
+    private init() {}
     
     
     
