@@ -6,18 +6,23 @@
 //  Copyright © 2020 Volodymyr Ostapyshyn. All rights reserved.
 //
 
-import UIKit
+import Spring
 
 class ViewController: UIViewController {
     
     @IBOutlet var coreAnimationView: UIView!
     private var originCoordinate: CGFloat?
-    //@IBOutlet var springView: SpringView!
+    
+    
+    @IBOutlet var springView: SpringView!
+    @IBOutlet var springButton: SpringButton!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         originCoordinate = coreAnimationView.frame.origin.x
+        
+        //springView.animate()
         // Do any additional setup after loading the view.
     }
     
@@ -34,6 +39,19 @@ class ViewController: UIViewController {
                 self.coreAnimationView.frame.origin.x += 40
             }
         })
+    }
+    
+    @IBAction func startSpringButton(_ sender: SpringButton) {
+        springView.animation = "wobble"
+        springView.curve = "easeIn"
+        springView.force = 2
+        springView.duration = 1
+        springView.delay = 0.3
+        springView.animate()
+        
+        springButton.animation = "morph"
+        springButton.curve = "easeOut"
+        springButton.animate()
     }
     
     
