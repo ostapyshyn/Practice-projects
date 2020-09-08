@@ -111,6 +111,7 @@
                     </view>
                     <connections>
                         <outlet property="coreAnimationView" destination="r2Q-xr-ksD" id="zcR-kz-k85"/>
+                        <outlet property="mainLabel" destination="pFb-s1-mQV" id="ivR-Gs-7Zg"/>
                         <outlet property="springButton" destination="NfU-9o-urw" id="JVp-aR-rZp"/>
                         <outlet property="springView" destination="QId-9o-tag" id="dpB-aa-LzU"/>
                     </connections>

@@ -12,15 +12,21 @@ class ViewController: UIViewController {
     
     @IBOutlet var coreAnimationView: UIView!
     private var originCoordinate: CGFloat?
+    @IBOutlet weak var mainLabel: UILabel!
     
     
     @IBOutlet var springView: SpringView!
     @IBOutlet var springButton: SpringButton!
     
+    var animations = ["Wobble", "Swing", "Shake"]
+    var countLabel = 0
+    var countButton = 1
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         originCoordinate = coreAnimationView.frame.origin.x
+        springButton.setTitle("Run Animation", for: .normal)
         
         //springView.animate()
         // Do any additional setup after loading the view.
@@ -42,7 +48,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startSpringButton(_ sender: SpringButton) {
-        springView.animation = "wobble"
+        
+        springButton.setTitle(animations[countButton], for: .normal)
+        mainLabel.text = animations[countLabel]
+        
+        switch countLabel {
+        case 0:
+            springView.animation = "wobble"
+        case 1:
+            springView.animation = "swing"
+        case 2:
+            springView.animation = "shake"
+        default:
+            springView.animation = "swing"
+        }
+        
+        
+        //springView.animation = "wobble"
         springView.curve = "easeIn"
         springView.force = 2
         springView.duration = 1
@@ -52,6 +74,19 @@ class ViewController: UIViewController {
         springButton.animation = "morph"
         springButton.curve = "easeOut"
         springButton.animate()
+        
+        if countButton == 2 {
+            countButton = 0
+        } else {
+            countButton += 1
+        }
+        
+        if countLabel == 2 {
+            countLabel = 0
+        } else {
+            countLabel += 1
+        }
+        
     }
     
     
