@@ -13,6 +13,8 @@ class AnimalTableViewController: UITableViewController {
     var animalsDict = [String: [String]]()
     var animalSectionTitles = [String]()
     
+    let animalIndexTitles = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L" , "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    
     let animals = ["Bear", "Black Swan", "Buffalo", "Camel", "Cockatoo", "Dog", "Donkey", "Emu", "Giraffe", "Greater Rhea", "Hippopotamus", "Horse", "Koala", "Lion", "Llama", "Manatus", "Meerkat", "Panda", "Peacock", "Pig", "Platypus", "Polar Bear", "Rhinoceros", "Seagull", "Tasmania Devil", "Whale", "Whale Shark", "Wombat"]
     
     override func viewDidLoad() {
@@ -62,6 +64,30 @@ class AnimalTableViewController: UITableViewController {
             cell.imageView?.image = UIImage(named: imageFilename)
             }
             return cell
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return animalIndexTitles
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        guard let index = animalSectionTitles.firstIndex(of: title) else { return -1
+        }
+        return index
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section : Int) -> CGFloat {
+        return 50
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let headerView = view as! UITableViewHeaderFooterView
+        headerView.backgroundView?.backgroundColor = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+        headerView.textLabel?.textColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+        headerView.textLabel?.font = UIFont(name: "Avenir", size: 25.0)
+        
     }
     
     func createAnimalDict() {
