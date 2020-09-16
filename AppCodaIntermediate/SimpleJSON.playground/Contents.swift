@@ -46,16 +46,40 @@ let json = """
 
 // nested JSON
 
-let json2 = """
-{
+//let json2 = """
+//{
+//"name": "John Davis",
+//"location": {
+//"country": "Peru",
+//},
+//"use": "to buy a new collection of clothes to stock her shop before the holidays." ,
+//"loan_amount": 150
+//}
+//"""
+
+// Multiple loans are structured in the form of an array.
+let json3 = """
+[{
 "name": "John Davis",
 "location": {
-"country": "Peru",
+"country": "Paraguay",
 },
 "use": "to buy a new collection of clothes to stock her shop before the holidays." ,
 "loan_amount": 150
-}
+},
+{
+"name": "Las Margaritas Group",
+"location": {
+"country": "Colombia",
+},
+"use": "to purchase coal in large quantities for resale.",
+"loan_amount": 200
+}]
 """
+
+
+
+
 
 
 struct Loan: Codable {
@@ -89,12 +113,18 @@ struct Loan: Codable {
 
 let decoder = JSONDecoder()
 
-if let jsonData = json2.data(using: .utf8) {
+if let jsonData = json3.data(using: .utf8) {
     do {
-        let loan = try decoder.decode(Loan.self, from: jsonData)
-        print(loan)
+        //let loan = try decoder.decode(Loan.self, from: jsonData)
+        let loans = try decoder.decode([Loan].self, from: jsonData)
+        print(loans)
     } catch {
         print(error)
     }
 
 }
+
+
+
+
+ 
